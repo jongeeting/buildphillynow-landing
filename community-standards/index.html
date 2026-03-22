@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Standards — Build Philly Now</title>
+  <meta name="description" content="Community standards for the Build Philly Now subscriber Slack community.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #00844D; --green-dark: #006639; --green-light: #E2F2EA;
+      --cream: #EAE7E4; --cream-dark: #D4D0CC; --black: #0D1810;
+      --gray: #4A5E52; --off-white: #F7F6F4;
+    }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--off-white); color: var(--black); }
+
+    nav {
+      background: var(--off-white); border-bottom: 1px solid var(--cream-dark);
+      padding: 0 3rem; height: 68px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo img { height: 34px; width: auto; }
+    .nav-back { font-size: 0.85rem; font-weight: 500; color: var(--gray); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; transition: color 0.18s; }
+    .nav-back:hover { color: var(--green); }
+
+    .page {
+      max-width: 720px; margin: 0 auto;
+      padding: 5rem 2rem 6rem;
+    }
+
+    .page-eyebrow {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-family: 'Unbounded', sans-serif; font-size: 0.6rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 1rem;
+    }
+    .page-eyebrow::before { content: ''; display: block; width: 1.5rem; height: 2px; background: var(--green); }
+
+    h1 {
+      font-family: 'Unbounded', sans-serif; font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 900; color: var(--black); line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 0.75rem;
+    }
+
+    .page-meta { font-size: 0.85rem; color: var(--gray); margin-bottom: 3rem; }
+
+    .divider { border: none; border-top: 1px solid var(--cream-dark); margin: 2.5rem 0; }
+
+    .intro { font-size: 1rem; line-height: 1.75; color: var(--black); margin-bottom: 2rem; }
+
+    h2 {
+      font-family: 'Unbounded', sans-serif; font-size: 1rem; font-weight: 700;
+      color: var(--green); letter-spacing: -0.01em; margin-bottom: 0.85rem; margin-top: 2.5rem;
+    }
+
+    h3 {
+      font-size: 0.9rem; font-weight: 700; color: var(--black);
+      margin-bottom: 0.6rem; margin-top: 1.5rem;
+    }
+
+    p { font-size: 0.975rem; line-height: 1.75; color: var(--black); margin-bottom: 1rem; }
+    p:last-child { margin-bottom: 0; }
+
+    ul { list-style: none; margin: 0.75rem 0 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    ul li { font-size: 0.95rem; line-height: 1.6; color: var(--black); padding-left: 1.25rem; position: relative; }
+    ul li::before { content: '–'; position: absolute; left: 0; color: var(--green); font-weight: 600; }
+
+    ol { list-style: none; counter-reset: steps; margin: 0.75rem 0 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    ol li { font-size: 0.95rem; line-height: 1.6; color: var(--black); padding-left: 2rem; position: relative; counter-increment: steps; }
+    ol li::before { content: counter(steps) '.'; position: absolute; left: 0; color: var(--green); font-weight: 700; font-size: 0.9rem; }
+
+    .callout {
+      background: var(--green-light); border-left: 3px solid var(--green);
+      border-radius: 0 4px 4px 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+    }
+    .callout p { font-size: 0.95rem; font-weight: 500; margin: 0; }
+
+    strong { font-weight: 700; color: var(--black); }
+
+    footer {
+      background: var(--black); padding: 2rem 3rem;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-logo img { height: 26px; opacity: 0.75; }
+    .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
+    .footer-home { font-size: 0.8rem; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.18s; }
+    .footer-home:hover { color: rgba(255,255,255,0.7); }
+
+    @media (max-width: 600px) { nav { padding: 0 1.25rem; } .page { padding: 3rem 1.25rem 4rem; } footer { padding: 1.75rem 1.25rem; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo"><img src="../assets/logo-icon.png" alt="Build Philly Now"></a>
+    <a href="/" class="nav-back">← Back to buildphillynow.org</a>
+  </nav>
+
+  <main class="page">
+    <p class="page-eyebrow">Subscriber Community</p>
+    <h1>Community Standards</h1>
+    <p class="page-meta">Build Philly Now — Effective [Date]</p>
+
+    <hr class="divider">
+
+    <p class="intro">All are welcome to participate in this community provided they read and agree to adhere to the following Community Standards. We expect cooperation from all participants to help ensure a focused, professional, and welcoming environment.</p>
+
+    <p>These standards apply to all conduct and communications in the BPN subscriber Slack workspace. BPN staff and designated moderators have final say on conduct and community membership.</p>
+
+    <p>If you witness a violation, are experiencing a problem, or have any concern, contact a BPN moderator by DM or email <a href="mailto:[contact]" style="color:var(--green)">[staff contact]</a>.</p>
+
+    <hr class="divider">
+
+    <h2>Ground Rules</h2>
+    <p><strong>Be respectful, patient, and professional.</strong> This community includes people with different roles, backgrounds, and points of view — developers and advocates, planners and journalists, policy wonks and data practitioners. Substantive disagreement is welcome. Personal attacks, harassment, and bad-faith conduct are not.</p>
+    <p><strong>Be generous.</strong> If someone helps you out, pay it forward. React, respond, and engage when you can.</p>
+    <p><strong>Stay on topic.</strong> Channels exist for specific purposes. Keep your contributions relevant to the channel's focus. Off-topic threads will be redirected by moderators.</p>
+
+    <hr class="divider">
+
+    <h2>Zero Tolerance for Harassment</h2>
+    <p>Harassment of any kind is not permitted. This includes but is not limited to:</p>
+    <ul>
+      <li>Offensive, demeaning, or discriminatory comments toward any person</li>
+      <li>Threats of violence or intimidation, online or in person</li>
+      <li>Unwanted or inappropriate personal contact or communication</li>
+      <li>Sexual content of any kind</li>
+      <li>Continued contact with someone after they have asked you to stop</li>
+      <li>Deliberate disclosure of someone's personal information without their consent</li>
+      <li>Encouraging or advocating for any of the above</li>
+    </ul>
+    <div class="callout"><p>Treat everyone with basic dignity. That's the standard.</p></div>
+
+    <hr class="divider">
+
+    <h2>Slack Workspace Guidelines</h2>
+
+    <h3>Confidentiality</h3>
+    <p>Do not screenshot or share Slack conversations outside the community without explicit permission. Messages in this workspace are off the record unless a member explicitly states otherwise. This applies to journalists and researchers as well, even when covering stories directly relevant to your work.</p>
+
+    <h3>Threading</h3>
+    <p>In channels with many participants, use threads. Post a brief prompt in the main channel and continue the conversation in a thread. Share to the main channel only if something is genuinely relevant to everyone. Sharing links in the main channel is always fine.</p>
+
+    <h3>No Electoral Politics</h3>
+    <p>BPN is a nonpartisan organization. Do not use this community to organize around candidates or electoral campaigns.</p>
+
+    <h3>Disclose Conflicts of Interest</h3>
+    <p>If you're sharing information about a project, organization, or policy where you have a professional or financial stake, say so. BPN's credibility depends on transparent sourcing, and so does this community's.</p>
+
+    <h3>No Unsolicited Self-Promotion</h3>
+    <p>Sharing your own work when it's relevant is fine. Cold pitching services or projects is not.</p>
+
+    <hr class="divider">
+
+    <h2>Editorial and Agenda-Setting Authority</h2>
+    <p>BPN staff set the editorial and policy agenda. The subscriber community exists to contribute to that work — not to redirect it. Members may suggest topics, flag issues, and pitch ideas, but BPN retains full authority over what gets published, what makes it into the dashboard, and what positions BPN takes publicly.</p>
+    <p>Participation in this community does not confer editorial rights, ownership of BPN outputs, or a governance role in the organization.</p>
+
+    <hr class="divider">
+
+    <h2>Admission</h2>
+    <p>Membership in this community is a subscriber benefit, not a right. BPN staff and moderators have discretion over who is admitted and who may remain. Relevant factors include professional conflicts of interest, past public conduct, and adherence to these standards.</p>
+
+    <hr class="divider">
+
+    <h2>Conflict Resolution</h2>
+    <p>If an issue arises, moderators will generally follow this process:</p>
+    <ol>
+      <li>Document the specific conduct in question</li>
+      <li>Have an informal one-on-one conversation with the member to understand both perspectives and identify a path forward</li>
+      <li>If the problem continues, issue a written notice outlining the documented conduct and the consequences of further violations</li>
+      <li>If the issue cannot be resolved, membership may be revoked</li>
+    </ol>
+    <p>BPN reserves the right to skip directly to suspension or removal in cases of serious harassment or conduct that threatens the safety or integrity of the community. Moderators will respect confidentiality requests from members who report concerns.</p>
+
+    <hr class="divider">
+
+    <h2>Revisions</h2>
+    <p>These standards are subject to revision by BPN staff. The current version is always posted at buildphillynow.org/community-standards.</p>
+
+    <div class="callout" style="margin-top:2rem">
+      <p>By joining the BPN subscriber Slack, you agree to these standards.</p>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/" class="footer-logo"><img src="../assets/logo-icon.png" alt="Build Philly Now"></a>
+    <a href="/" class="footer-home">← buildphillynow.org</a>
+    <span class="footer-copy">© 2025 Build Philly Now</span>
+  </footer>
+
+</body>
+</html>
