@@ -35,7 +35,7 @@
     }
     .nav-left { display: flex; align-items: center; }
     .nav-logo { display: flex; align-items: center; text-decoration: none; }
-    .nav-logo img { height: 32px; width: auto; }
+    .nav-logo img { height: 40px; width: auto; }
     .nav-right { display: flex; align-items: center; gap: 0.25rem; }
     .nav-link {
       font-size: 0.85rem; font-weight: 500; color: var(--gray);
@@ -52,32 +52,28 @@
       max-width: 860px;
       margin: 0 auto;
     }
-    .hero-tag {
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      background: var(--green-pale); border: 1px solid rgba(0,132,77,0.2);
-      border-radius: 20px; padding: 0.35rem 0.9rem;
-      font-size: 0.75rem; font-weight: 600; color: var(--green);
-      letter-spacing: 0.06em; text-transform: uppercase;
-      margin-bottom: 2rem;
+    .hero-logo {
+      margin-bottom: 2.5rem;
       opacity: 0; animation: fadeUp 0.5s 0.1s forwards;
     }
-    .hero-tag::before { content: ''; width: 6px; height: 6px; background: var(--green); border-radius: 50%; }
+    .hero-logo img { height: 56px; width: auto; display: block; }
     h1 {
-      font-family: 'Unbounded', sans-serif;
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      font-weight: 900; line-height: 1.1; letter-spacing: -0.025em;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700; line-height: 1.2; letter-spacing: -0.02em;
       color: var(--black); margin-bottom: 1.5rem;
-      opacity: 0; animation: fadeUp 0.55s 0.22s forwards;
+      opacity: 0; animation: fadeUp 0.55s 0.1s forwards;
     }
     h1 em { color: var(--green); font-style: normal; }
     .hero-sub {
-      font-size: 1.1rem; line-height: 1.72; color: var(--gray);
+      font-size: 1.15rem; line-height: 1.75; color: var(--gray);
       max-width: 640px; margin-bottom: 2.5rem; font-weight: 400;
-      opacity: 0; animation: fadeUp 0.55s 0.36s forwards;
+      opacity: 0; animation: fadeUp 0.55s 0.28s forwards;
     }
+    .hero-sub strong { color: var(--black); font-weight: 600; }
     .hero-issues {
       display: flex; gap: 0.6rem; flex-wrap: wrap;
-      opacity: 0; animation: fadeUp 0.5s 0.48s forwards;
+      opacity: 0; animation: fadeUp 0.5s 0.42s forwards;
     }
     .issue-pill {
       font-size: 0.8rem; font-weight: 600; color: var(--gray);
@@ -85,6 +81,19 @@
       padding: 0.35rem 0.9rem; letter-spacing: 0.03em;
       background: white;
     }
+
+    /* ── BIOS ──────────────────────────────────────── */
+    .bios { margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--cream-dk); }
+    .bios-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .bio { }
+    .bio-name {
+      font-family: 'Unbounded', sans-serif; font-size: 0.85rem; font-weight: 700;
+      color: var(--black); margin-bottom: 0.2rem;
+    }
+    .bio-title {
+      font-size: 0.78rem; font-weight: 600; color: var(--green); margin-bottom: 0.75rem;
+    }
+    .bio p { font-size: 0.88rem; line-height: 1.7; color: var(--gray); }
 
     /* ── SECTION DIVIDER ───────────────────────────── */
     .section-rule { border: none; border-top: 1px solid var(--cream-dk); margin: 0 2.5rem; }
@@ -112,7 +121,7 @@
       display: flex; flex-direction: column; gap: 1.25rem;
     }
     .pcard-logo { display: block; }
-    .pcard-logo svg { display: block; height: 36px; width: auto; }
+    .pcard-logo img { display: block; height: 32px; width: auto; }
     .pcard-desc { font-size: 0.9rem; line-height: 1.65; color: var(--gray); }
 
     .pcard-preview { position: relative; overflow: hidden; height: 200px; }
@@ -142,27 +151,58 @@
 
     /* ── PROJECTS ──────────────────────────────────── */
     .projects { padding: 1.5rem 2.5rem 4rem; max-width: 1100px; margin: 0 auto; }
-    .projects-group { }
     .projects-header {
       display: flex; align-items: center; justify-content: space-between;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
     }
     .projects-title {
       font-family: 'Unbounded', sans-serif; font-size: 0.7rem; font-weight: 700;
       letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-lt);
     }
-    .projects-grid { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-    .proj-link {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: white; border: 1.5px solid var(--cream-dk); border-radius: 6px;
-      padding: 0.65rem 1.1rem; text-decoration: none;
-      font-size: 0.82rem; font-weight: 600; color: var(--gray);
-      transition: all 0.18s;
+    .projects-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
     }
-    .proj-link:hover { border-color: var(--green); color: var(--green); background: var(--green-pale); }
-    .proj-link svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2; flex-shrink: 0; }
-    .proj-ext { opacity: 0.4; }
-    .proj-ext svg { width: 11px; height: 11px; }
+    .proj-card {
+      display: flex; flex-direction: column;
+      background: white; border: 1.5px solid var(--cream-dk); border-radius: 8px;
+      overflow: hidden; text-decoration: none; color: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .proj-card:hover { border-color: var(--green); box-shadow: 0 6px 24px rgba(0,132,77,0.08); transform: translateY(-2px); }
+    .proj-card-img {
+      height: 140px; background: var(--cream); overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      border-bottom: 1px solid var(--cream-dk);
+    }
+    .proj-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .proj-card-img .placeholder {
+      font-size: 0.7rem; color: var(--gray-lt); font-weight: 500;
+      text-align: center; padding: 1rem;
+    }
+    .proj-card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .proj-card-cat {
+      font-family: 'Unbounded', sans-serif; font-size: 0.55rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase; color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+    .proj-card-title {
+      font-size: 0.88rem; font-weight: 700; color: var(--black); line-height: 1.35;
+      margin-bottom: 0.5rem;
+    }
+    .proj-card-desc {
+      font-size: 0.78rem; line-height: 1.55; color: var(--gray); flex: 1;
+    }
+    .proj-card-footer {
+      padding: 0.75rem 1.25rem; border-top: 1px solid var(--cream-dk);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .proj-card-cta {
+      font-size: 0.75rem; font-weight: 600; color: var(--green);
+      display: flex; align-items: center; gap: 0.25rem;
+    }
+    .proj-card-cta svg { width: 12px; height: 12px; stroke: var(--green); fill: none; stroke-width: 2.5; }
 
     /* ── ABOUT ─────────────────────────────────────── */
     .about { background: var(--cream); padding: 5rem 2.5rem; }
@@ -176,30 +216,16 @@
     .about-kicker::before { content: ''; width: 1.25rem; height: 2px; background: var(--green); }
     .about-hed {
       font-family: 'Unbounded', sans-serif; font-size: clamp(1.3rem, 1.8vw, 1.9rem);
-      font-weight: 800; color: var(--black); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 2rem;
+      font-weight: 800; color: var(--black); line-height: 1.2; letter-spacing: -0.02em;
     }
     .about-hed em { color: var(--green); font-style: normal; }
-    .validators { display: flex; flex-direction: column; gap: 0.8rem; }
-    .val { display: flex; gap: 0.65rem; align-items: flex-start; font-size: 0.82rem; color: var(--gray); font-weight: 500; line-height: 1.4; }
-    .val-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; flex-shrink: 0; margin-top: 0.35em; }
     .about-right { }
     .about-right p { font-size: 0.975rem; line-height: 1.8; color: var(--black); margin-bottom: 1.35rem; }
     .about-right p:last-child { margin-bottom: 0; }
     .about-right strong { color: var(--green); font-weight: 600; }
-    .produces { margin-top: 2.25rem; padding-top: 2.25rem; border-top: 1px solid var(--cream-dk); }
-    .produces-label { font-family: 'Unbounded', sans-serif; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); margin-bottom: 1.1rem; }
-    .produces-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
-    .produces-list li { font-size: 0.92rem; line-height: 1.6; color: var(--black); padding-left: 1.2rem; position: relative; }
-    .produces-list li::before { content: ''; position: absolute; left: 0; top: 0.7em; width: 0.45rem; height: 1.5px; background: var(--green); }
-
-    /* ── COALITION ─────────────────────────────────── */
-    .coalition { background: var(--black); padding: 3rem 2.5rem; display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; }
-    .coa-label { font-family: 'Unbounded', sans-serif; font-size: 0.58rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.25); white-space: nowrap; flex-shrink: 0; }
-    .coa-members { display: flex; gap: 1.75rem; flex-wrap: wrap; }
-    .coa-member { font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.45); letter-spacing: 0.03em; }
 
     /* ── FOOTER ────────────────────────────────────── */
-    footer { background: var(--black); padding: 2.5rem 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; border-top: 1px solid rgba(255,255,255,0.07); }
+    footer { background: var(--black); padding: 2.5rem 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; }
     .footer-logo img { height: 26px; opacity: 0.75; }
     .footer-links { display: flex; gap: 1.75rem; list-style: none; flex-wrap: wrap; }
     .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.18s; }
@@ -213,12 +239,16 @@
       .hero { padding: 100px 1.25rem 3.5rem; }
       .products, .projects { padding-left: 1.25rem; padding-right: 1.25rem; }
       .products-grid { grid-template-columns: 1fr; }
+      .projects-cards { grid-template-columns: 1fr; }
       .about { padding: 4rem 1.25rem; }
       .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .about-left { position: static; }
-      .coalition { padding: 2.5rem 1.25rem; gap: 1.5rem; }
+      .bios-grid { grid-template-columns: 1fr; }
       footer { padding: 2rem 1.25rem; }
       .section-rule { margin: 0 1.25rem; }
+    }
+    @media (min-width: 861px) and (max-width: 1060px) {
+      .projects-cards { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -228,54 +258,34 @@
 <nav>
   <div class="nav-left">
     <a href="/" class="nav-logo">
-      <img src="assets/logo-icon.png" alt="Build Philly Now">
+      <img src="assets/logo-full-green.svg" alt="Build Philly Now">
     </a>
   </div>
   <div class="nav-right">
     <a href="https://buildphillynow.substack.com" target="_blank" class="nav-link">News</a>
-    <a href="https://map.buildphillynow.org" target="_blank" class="nav-link">Dashboard</a>
-    <div class="nav-divider"></div>
     <a href="#projects" class="nav-link">Projects</a>
-    <div class="nav-divider"></div>
     <a href="#about" class="nav-link">About</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-tag">Philadelphia Economic Development</div>
-  <h1>Building more of what<br>Philadelphia needs to <em>thrive.</em></h1>
-  <p class="hero-sub">Housing, transportation, and energy are the three biggest costs in most families' budgets. Build Philly Now covers the policy and the politics of building more of all three.</p>
-  <div class="hero-issues">
-    <span class="issue-pill">Housing</span>
-    <span class="issue-pill">Infrastructure</span>
-    <span class="issue-pill">Energy</span>
-  </div>
+  <h1>Building more of what a growing Philadelphia needs to <em>thrive.</em></h1>
+  <p class="hero-sub"><strong>Build Philly Now</strong> is an economic development think tank dedicated to building more housing and infrastructure in Philadelphia. Housing and infrastructure are the biggest costs in most families' budgets — building more creates jobs and opportunity, and brings those costs down.</p>
 </section>
 
 <hr class="section-rule">
 
 <!-- PRODUCTS -->
 <section class="products">
+  <div style="font-family:'Unbounded',sans-serif; font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--gray-lt); margin-bottom:1.5rem;">Our Platforms</div>
   <div class="products-grid">
 
     <!-- BPN News -->
     <a href="https://buildphillynow.substack.com" target="_blank" class="pcard">
       <div class="pcard-top">
-        <!-- BPN NEWS Option 1 logo — SVG recreation of bracket mark + BPN NEWS inline -->
         <div class="pcard-logo">
-          <svg viewBox="0 0 220 52" fill="none" xmlns="http://www.w3.org/2000/svg" height="36">
-            <!-- Bracket mark -->
-            <rect x="0" y="0" width="9" height="44" rx="2" fill="#00844D"/>
-            <rect x="0" y="35" width="38" height="9" rx="2" fill="#00844D"/>
-            <rect x="29" y="35" width="9" height="9" rx="2" fill="#00844D"/>
-            <!-- inner curve suggestion -->
-            <path d="M9 35 Q9 44 18 44" stroke="#00844D" stroke-width="0" fill="none"/>
-            <!-- BPN text -->
-            <text x="22" y="34" font-family="'Unbounded', sans-serif" font-weight="900" font-size="30" fill="#00844D" letter-spacing="-0.5">BPN</text>
-            <!-- NEWS text -->
-            <text x="100" y="34" font-family="'Unbounded', sans-serif" font-weight="900" font-size="30" fill="#00844D" letter-spacing="-0.5">NEWS</text>
-          </svg>
+          <img src="assets/logo-bpn-news.png" alt="BPN News">
         </div>
         <p class="pcard-desc">Original reporting on Philadelphia housing, development, and infrastructure. Land Bank, Historical Commission, Planning Commission, SEPTA, and more — covered by reporters who understand the policy.</p>
       </div>
@@ -298,19 +308,8 @@
     <!-- BPN Property Intelligence -->
     <a href="https://map.buildphillynow.org" target="_blank" class="pcard">
       <div class="pcard-top">
-        <!-- BPN PROPERTY INTELLIGENCE Option 2 logo -->
         <div class="pcard-logo">
-          <svg viewBox="0 0 340 52" fill="none" xmlns="http://www.w3.org/2000/svg" height="36">
-            <!-- Bracket mark -->
-            <rect x="0" y="0" width="9" height="44" rx="2" fill="#00844D"/>
-            <rect x="0" y="35" width="38" height="9" rx="2" fill="#00844D"/>
-            <rect x="29" y="35" width="9" height="9" rx="2" fill="#00844D"/>
-            <!-- BPN -->
-            <text x="22" y="34" font-family="'Unbounded', sans-serif" font-weight="900" font-size="30" fill="#00844D" letter-spacing="-0.5">BPN</text>
-            <!-- PROPERTY INTELLIGENCE stacked smaller -->
-            <text x="102" y="21" font-family="'Unbounded', sans-serif" font-weight="700" font-size="14.5" fill="#00844D" letter-spacing="0.01em">PROPERTY</text>
-            <text x="102" y="38" font-family="'Unbounded', sans-serif" font-weight="700" font-size="14.5" fill="#00844D" letter-spacing="0.01em">INTELLIGENCE</text>
-          </svg>
+          <img src="assets/logo-bpn-pi.png" alt="BPN Property Intelligence">
         </div>
         <p class="pcard-desc">The parcel data dashboard putting the planning intelligence usually reserved for insiders in the hands of everyone who needs it. 577,000+ Philadelphia parcels, updated regularly.</p>
       </div>
@@ -335,52 +334,97 @@
 <section class="projects" id="projects">
   <hr class="section-rule" style="margin: 0 0 2.5rem;">
 
-  <div class="projects-group">
-    <div class="projects-header">
-      <span class="projects-title">Policy &amp; Advocacy</span>
-    </div>
-    <div class="projects-grid">
-      <a href="https://philly-toc.netlify.app/" target="_blank" class="proj-link">
-        <svg viewBox="0 0 16 16"><path d="M2 12V6l6-4 6 4v6l-6 4-6-4z"/></svg>
-        30,000 Homes: TOC Zoning Advocacy
-        <span class="proj-ext"><svg viewBox="0 0 16 16"><path d="M6 3H3v10h10v-3M10 3h3v3M13 3L7 9"/></svg></span>
-      </a>
-      <a href="https://phillyhousingproductionfund.netlify.app/" target="_blank" class="proj-link">
-        <svg viewBox="0 0 16 16"><path d="M2 12V6l6-4 6 4v6l-6 4-6-4z"/></svg>
-        Philadelphia Housing Production Fund
-        <span class="proj-ext"><svg viewBox="0 0 16 16"><path d="M6 3H3v10h10v-3M10 3h3v3M13 3L7 9"/></svg></span>
-      </a>
-      <a href="https://phillyofficeconversions.netlify.app/" target="_blank" class="proj-link">
-        <svg viewBox="0 0 16 16"><path d="M2 12V6l6-4 6 4v6l-6 4-6-4z"/></svg>
-        Philadelphia 20-Year Abatement Analysis
-        <span class="proj-ext"><svg viewBox="0 0 16 16"><path d="M6 3H3v10h10v-3M10 3h3v3M13 3L7 9"/></svg></span>
-      </a>
-    </div>
+  <div class="projects-header">
+    <span class="projects-title">Projects &amp; Research</span>
   </div>
 
-  <div class="projects-group" style="margin-top:2rem">
-    <div class="projects-header">
-      <span class="projects-title">Research &amp; Analysis</span>
-    </div>
-    <div class="projects-grid">
-      <a href="https://norrissquarettk.netlify.app/" target="_blank" class="proj-link">
-        <svg viewBox="0 0 16 16"><path d="M4 2h8v12H4zM7 6h2M7 9h2M6 12h4"/></svg>
-        Two Years, 30 Homes: Civetta / Norris Square Timeline
-        <span class="proj-ext"><svg viewBox="0 0 16 16"><path d="M6 3H3v10h10v-3M10 3h3v3M13 3L7 9"/></svg></span>
-      </a>
-      <a href="https://oldcitypermits.netlify.app/" target="_blank" class="proj-link">
-        <svg viewBox="0 0 16 16"><path d="M4 2h8v12H4zM7 6h2M7 9h2M6 12h4"/></svg>
-        Old City: CTR Overlay Permitting Study
-        <span class="proj-ext"><svg viewBox="0 0 16 16"><path d="M6 3H3v10h10v-3M10 3h3v3M13 3L7 9"/></svg></span>
-      </a>
-      <a href="https://ncaoverlaystudy.netlify.app/" target="_blank" class="proj-link">
-        <svg viewBox="0 0 16 16"><path d="M4 2h8v12H4zM7 6h2M7 9h2M6 12h4"/></svg>
-        North Delaware Commercial Overlay Study
-        <span class="proj-ext"><svg viewBox="0 0 16 16"><path d="M6 3H3v10h10v-3M10 3h3v3M13 3L7 9"/></svg></span>
-      </a>
-    </div>
-  </div>
+  <div class="projects-cards">
 
+    <a href="https://philly-toc.netlify.app/" target="_blank" class="proj-card">
+      <div class="proj-card-img">
+        <div class="placeholder">Screenshot coming soon</div>
+      </div>
+      <div class="proj-card-body">
+        <span class="proj-card-cat">Policy &amp; Advocacy</span>
+        <div class="proj-card-title">30,000 Homes: TOC Zoning Advocacy</div>
+        <p class="proj-card-desc">Transit-oriented communities zoning reform to unlock 30,000 new homes near transit.</p>
+      </div>
+      <div class="proj-card-footer">
+        <span class="proj-card-cta">View project <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </a>
+
+    <a href="https://phillyhousingproductionfund.netlify.app/" target="_blank" class="proj-card">
+      <div class="proj-card-img">
+        <div class="placeholder">Screenshot coming soon</div>
+      </div>
+      <div class="proj-card-body">
+        <span class="proj-card-cat">Policy &amp; Advocacy</span>
+        <div class="proj-card-title">Philadelphia Housing Production Fund</div>
+        <p class="proj-card-desc">A dedicated city fund to finance new housing production at scale.</p>
+      </div>
+      <div class="proj-card-footer">
+        <span class="proj-card-cta">View project <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </a>
+
+    <a href="https://phillyofficeconversions.netlify.app/" target="_blank" class="proj-card">
+      <div class="proj-card-img">
+        <div class="placeholder">Screenshot coming soon</div>
+      </div>
+      <div class="proj-card-body">
+        <span class="proj-card-cat">Policy &amp; Advocacy</span>
+        <div class="proj-card-title">20-Year Abatement Analysis</div>
+        <p class="proj-card-desc">Data-driven analysis of the tax abatement's impact on housing production.</p>
+      </div>
+      <div class="proj-card-footer">
+        <span class="proj-card-cta">View project <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </a>
+
+    <a href="https://norrissquarettk.netlify.app/" target="_blank" class="proj-card">
+      <div class="proj-card-img">
+        <div class="placeholder">Screenshot coming soon</div>
+      </div>
+      <div class="proj-card-body">
+        <span class="proj-card-cat">Research &amp; Analysis</span>
+        <div class="proj-card-title">Two Years, 30 Homes: Civetta / Norris Square</div>
+        <p class="proj-card-desc">Timeline documenting the Land Bank approval process for a Turn the Key project.</p>
+      </div>
+      <div class="proj-card-footer">
+        <span class="proj-card-cta">View project <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </a>
+
+    <a href="https://oldcitypermits.netlify.app/" target="_blank" class="proj-card">
+      <div class="proj-card-img">
+        <div class="placeholder">Screenshot coming soon</div>
+      </div>
+      <div class="proj-card-body">
+        <span class="proj-card-cat">Research &amp; Analysis</span>
+        <div class="proj-card-title">Old City: CTR Overlay Permitting Study</div>
+        <p class="proj-card-desc">How the Commercial Tourist Resort overlay affects development permitting in Old City.</p>
+      </div>
+      <div class="proj-card-footer">
+        <span class="proj-card-cta">View project <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </a>
+
+    <a href="https://ncaoverlaystudy.netlify.app/" target="_blank" class="proj-card">
+      <div class="proj-card-img">
+        <div class="placeholder">Screenshot coming soon</div>
+      </div>
+      <div class="proj-card-body">
+        <span class="proj-card-cat">Research &amp; Analysis</span>
+        <div class="proj-card-title">North Delaware Commercial Overlay Study</div>
+        <p class="proj-card-desc">Analysis of the NCA overlay's impact on commercial corridor development.</p>
+      </div>
+      <div class="proj-card-footer">
+        <span class="proj-card-cta">View project <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </a>
+
+  </div>
 </section>
 
 <hr class="section-rule">
@@ -391,12 +435,6 @@
     <div class="about-left">
       <p class="about-kicker">About BPN</p>
       <h2 class="about-hed">Pro-growth.<br>Pro-worker.<br><em>Pro-Philadelphia.</em></h2>
-      <div class="validators">
-        <div class="val"><div class="val-dot"></div><span>IBEW Local 98 board leadership</span></div>
-        <div class="val"><div class="val-dot"></div><span>Eastern Atlantic States Regional Council of Carpenters</span></div>
-        <div class="val"><div class="val-dot"></div><span>30,000 Homes housing advocacy table</span></div>
-        <div class="val"><div class="val-dot"></div><span>Partners with Parker and Shapiro administrations</span></div>
-      </div>
     </div>
     <div class="about-right">
       <p>Build Philly Now is a Philadelphia economic development think tank dedicated to building more of the things a growing city needs to thrive: housing, transportation, and energy.</p>
@@ -404,33 +442,24 @@
       <p>BPN grew out of Philadelphia 3.0, a nonprofit and PAC formed in 2014 to support independent candidates for Philadelphia City Council. Since 2023, we've been doing something different: spending less time running candidates and more time building coalitions — bringing together the developers, trades, and advocates who want to see Philadelphia grow, and giving them a shared institutional home.</p>
       <p>Our board includes leadership from IBEW Local 98 and the Eastern Atlantic States Regional Council of Carpenters. We run the 30,000 Homes housing advocacy table with housing developers, building trades, and mission-driven organizations. We work with the Parker and Shapiro administrations, City Council members, and state legislators who want to make Philadelphia a city that builds. <strong>Most pro-housing and pro-growth advocacy talks past organized labor. We don't. That's the point.</strong></p>
       <p>One through-line from Philadelphia 3.0 to Build Philly Now is that our success has always depended on building policy networks — connecting people across sectors who share a stake in pro-growth outcomes to each other, and collectively to the decision-makers who can act on them. That convening work is part of what we do: bringing together the strange bedfellows, hosting the conversations that don't happen elsewhere, and building an analytical home that practitioners, advocates, and policymakers across these fields can take seriously. BPN supplies the information and analysis that makes every layer of that network more effective — original reporting for people who need to know what's happening, policy research for people shaping the agenda, and a data dashboard that puts the planning intelligence usually reserved for insiders in the hands of anyone who needs it to do their job.</p>
-      <div class="produces">
-        <p class="produces-label">What we produce</p>
-        <ul class="produces-list">
-          <li>Original reporting and analysis on housing, transportation, energy, and economic development — covering City Council, state legislation, city hearings, and the development projects reshaping Philadelphia's neighborhoods.</li>
-          <li>A property data dashboard at map.buildphillynow.org — making the information insiders use to track development accessible to everyone.</li>
-          <li>Policy analysis and advocacy on the issues that determine whether Philadelphia grows or stagnates: zoning reform, office-to-residential conversion, transit investment, energy infrastructure, and the regulatory environment for building.</li>
-          <li>A biweekly policy lunch series connecting policymakers, practitioners, and advocates across our issue areas.</li>
-          <li>A growing coalition of unlikely allies — organized labor, housing advocates, developers, and urbanists — working together on shared policy priorities.</li>
-        </ul>
+
+      <div class="bios">
+        <div class="bios-grid">
+          <div class="bio">
+            <div class="bio-name">Alison Perelman</div>
+            <div class="bio-title">Executive Director</div>
+            <p>Alison Perelman is the Executive Director of Build Philly Now, and has served in the same role for Philadelphia 3.0 since 2014. A former City Council staffer with a PhD in Political Communication, Perelman has led numerous electoral and advocacy campaigns at the municipal level. She has served on the Board of Directors and Executive Committee of Habitat for Humanity Philadelphia for the past five years, and on the Board of Directors of the Rendell Center for Civics and Civic Education for the past seven years.</p>
+          </div>
+          <div class="bio">
+            <div class="bio-name">Jon Geeting</div>
+            <div class="bio-title">Director of Policy and Advocacy</div>
+            <p>Jon Geeting is Director of Policy and Advocacy for Build Philly Now, and has served as Director of Engagement for Philadelphia 3.0 since 2016. A former journalist with WHYY's PlanPhilly, Geeting has spent more than a decade building the coalitions and policy networks that shape Philadelphia's housing and transportation debates. He is a co-founder of 5th Square, the urbanist political action committee, and of the Transit Forward Philly coalition.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- COALITION -->
-<div class="coalition">
-  <span class="coa-label">Our coalition</span>
-  <div class="coa-members">
-    <span class="coa-member">IBEW Local 98</span>
-    <span class="coa-member">EAS Regional Council of Carpenters</span>
-    <span class="coa-member">30,000 Homes Table</span>
-    <span class="coa-member">Building Trades</span>
-    <span class="coa-member">Urban League</span>
-    <span class="coa-member">Habitat for Humanity</span>
-    <span class="coa-member">SEPTA</span>
-  </div>
-</div>
 
 <!-- FOOTER -->
 <footer>
@@ -440,10 +469,8 @@
     <li><a href="https://map.buildphillynow.org" target="_blank">Dashboard</a></li>
     <li><a href="/community-standards/">Community Standards</a></li>
   </ul>
-  <span class="footer-copy">© 2025 Build Philly Now</span>
+  <span class="footer-copy">&copy; 2025 Build Philly Now</span>
 </footer>
-
-
 
 </body>
 </html>
