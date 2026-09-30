@@ -20,7 +20,7 @@
       --gray:       #4A5E52;
       --gray-lt:    #8A9E93;
       --white:      #FFFFFF;
-      --off-white:  #F7F6F4;
+      --off-white:  #EAE7E4;
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--off-white); color: var(--black); overflow-x: hidden; }
@@ -28,7 +28,7 @@
     /* ── NAV ───────────────────────────────────────── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(247,246,244,0.97); backdrop-filter: blur(12px);
+      background: rgba(234,231,228,0.97); backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--cream-dk);
       height: 66px; padding: 0 2.5rem;
       display: flex; align-items: center; justify-content: space-between;
@@ -141,50 +141,76 @@
     .pcard-cta svg { width: 14px; height: 14px; stroke: var(--green); fill: none; stroke-width: 2.5; }
 
     /* ── RESEARCH ──────────────────────────────────── */
-    .projects { padding: 1.5rem 2.5rem 4rem; max-width: 1100px; margin: 0 auto; }
-    .projects-header { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .projects { padding: 1.5rem 2.5rem 3rem; max-width: 1100px; margin: 0 auto; }
     .projects-title {
       font-family: 'Unbounded', sans-serif; font-size: 0.7rem; font-weight: 700;
       letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-lt);
     }
     .projects-sub { font-size: 0.85rem; color: var(--gray); }
-    .rgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    .rcard {
-      display: flex; flex-direction: column; gap: 0.75rem;
-      background: white; border: 1.5px solid var(--cream-dk); border-radius: 8px;
-      padding: 1.25rem 1.35rem 1.1rem; text-decoration: none; color: inherit;
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-    }
-    a.rcard:hover { border-color: var(--green); box-shadow: 0 8px 28px rgba(0,132,77,0.1); transform: translateY(-3px); }
-    .rcard-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
-    .rtag {
-      font-size: 0.66rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-      color: var(--green); background: var(--green-pale); border-radius: 20px; padding: 0.22rem 0.6rem;
-    }
-    .rtag.partner { color: var(--gray); background: var(--cream); }
-    .rcard-title {
-      font-family: 'Unbounded', sans-serif; font-size: 0.85rem; font-weight: 700;
-      line-height: 1.35; letter-spacing: -0.01em; color: var(--black);
-    }
-    .rcard-desc { font-size: 0.85rem; line-height: 1.6; color: var(--gray); flex: 1; }
-    .rcard-cta { font-size: 0.78rem; font-weight: 700; color: var(--green); display: flex; align-items: center; gap: 0.3rem; }
-    .rcard-cta svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2.5; }
-    .rgrid-one { grid-template-columns: 1fr; margin-bottom: 2.5rem; }
-    .rcard-wide { flex-direction: row; align-items: center; flex-wrap: wrap; gap: 1rem 2rem; background: var(--green-pale); border-color: rgba(0,132,77,0.25); }
-    .rcard-wide .rcard-desc { flex: 1 1 320px; }
-    .rcard-wide .rcard-title { font-size: 1rem; }
-    .rgroup { margin-bottom: 2.5rem; }
-    .rgroup-title {
-      font-family: 'Unbounded', sans-serif; font-size: 1.05rem; font-weight: 800;
-      letter-spacing: -0.01em; color: var(--black); margin-bottom: 1rem;
-      padding-bottom: 0.6rem; border-bottom: 2px solid var(--green);
-    }
-    .rcard.soon { background: transparent; border-style: dashed; }
-    .rcard.soon .rtag { color: var(--gray); background: var(--cream); }
-    .rcard.soon .rcard-cta { color: var(--gray-lt); }
+    .issues-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin: 2.5rem 0 1.25rem; }
+    .eyebrow { font-family: 'Unbounded', sans-serif; font-weight: 600; font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gray); margin: 0 0 0.9rem; display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem; }
+    .eyebrow a { color: var(--green); letter-spacing: 0.02em; text-transform: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.78rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+    .tag { display: inline-block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 99px; padding: 0.15rem 0.55rem; }
+    .tag.n { background: var(--cream); color: var(--gray); }
+    .date { font-size: 0.72rem; color: var(--gray); }
+    .cta { font-size: 0.78rem; font-weight: 700; color: var(--green); display: flex; align-items: center; gap: 0.3rem; }
+    .cta svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+    .ttl { font-family: 'Unbounded', sans-serif; font-weight: 700; line-height: 1.3; letter-spacing: -0.01em; }
+
+    /* latest release */
+    .latest { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 1rem; }
+    .feature { background: #A5502F; color: #FFFFFF; border-radius: 10px; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+    .feature:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+    .feature .txt { padding: 1.6rem; display: flex; flex-direction: column; gap: 0.7rem; justify-content: flex-end; }
+    .feature .ttl { font-size: clamp(1rem, 2.2vw, 1.4rem); text-transform: uppercase; }
+    .feature p { margin: 0; font-size: 0.86rem; line-height: 1.55; }
+    .feature .tag { background: rgba(255,255,255,0.2); color: #FFFFFF; align-self: flex-start; }
+    .feature .date { color: #FFFFFF; opacity: 0.9; }
+    .ffig { background: rgba(255,255,255,0.12); display: flex; align-items: center; }
+    .ffig svg { display: block; width: 100%; height: auto; }
+    .recent { display: grid; gap: 0.6rem; align-content: start; }
+    .mini { background: white; border-radius: 8px; padding: 0.8rem 1rem; border-left: 5px solid #A5502F; display: grid; gap: 0.15rem; text-decoration: none; color: inherit; transition: box-shadow 0.2s; }
+    .mini:hover { box-shadow: 0 6px 18px rgba(0,0,0,0.1); }
+    .mini .ttl { font-size: 0.78rem; }
+    .soon-wide { margin-top: 1rem; border: 2px dashed var(--cream-dk); border-radius: 10px; padding: 1.1rem 1.4rem; display: grid; gap: 0.35rem; }
+    .soon-wide .tag { justify-self: start; }
+    .soon-wide .ttl { font-size: 0.95rem; }
+    .soon-wide p { margin: 0; color: var(--gray); font-size: 0.84rem; }
+
+    /* issue sections */
+    .issue { margin-bottom: 2rem; }
+    .band { border-radius: 10px 10px 0 0; padding: 1rem 1.25rem; display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem 1.5rem; flex-wrap: wrap; color: #FFFFFF; }
+    .band h3 { font-family: 'Unbounded', sans-serif; font-weight: 800; text-transform: uppercase; font-size: 1.15rem; margin: 0; }
+    .band p { margin: 0; font-size: 0.84rem; flex: 1 1 260px; }
+    .band .cnt { font-weight: 700; font-size: 0.78rem; white-space: nowrap; }
+    .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; padding: 1rem; background: rgba(255,255,255,0.45); border-radius: 0 0 10px 10px; }
+    .cards.one { grid-template-columns: minmax(0, 1fr); }
+    .rc, .tool { background: white; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; }
+    a.rc:hover, a.tool:hover { transform: translateY(-3px); box-shadow: 0 8px 22px rgba(0,0,0,0.12); }
+    .fig svg { display: block; width: 100%; height: auto; font-family: 'Plus Jakarta Sans', sans-serif; }
+    .body { padding: 0.9rem 1rem 1rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
+    .body .ttl { font-size: 0.84rem; }
+    .body p { margin: 0; color: var(--gray); font-size: 0.8rem; line-height: 1.55; flex: 1; }
+    .tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+    .duo .issue { margin-bottom: 0; }
+
+    /* tools, news */
+    .tools { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+    .tool.soon { background: transparent; border: 2px dashed var(--cream-dk); justify-content: center; min-height: 140px; }
+    .cols2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+    .post { padding-block: 0.7rem; border-bottom: 1px solid var(--cream-dk); display: grid; gap: 0.15rem; text-decoration: none; color: inherit; }
+    .post:last-child { border-bottom: 0; }
+    .post b { font-size: 0.88rem; line-height: 1.4; }
+    .post:hover b { color: var(--green); }
+    .guide { display: flex; gap: 0.75rem 1.75rem; align-items: center; flex-wrap: wrap; background: #6BAF8D; color: #0D1810; border-radius: 10px; padding: 1.1rem 1.4rem; text-decoration: none; }
+    .guide p { margin: 0; flex: 1 1 280px; font-size: 0.86rem; line-height: 1.55; }
+    .guide .gtag { background: #0D1810; color: #FFFFFF; }
+    .guide .ttl { font-size: 0.95rem; }
+    .guide .cta { color: #0D1810; }
 
     /* ── ABOUT ─────────────────────────────────────── */
-    .about { background: var(--cream); padding: 5rem 2.5rem; }
+    .about { background: var(--white); padding: 5rem 2.5rem; }
     .about-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: start; }
     .about-left { position: sticky; top: 86px; }
     .about-kicker {
@@ -232,7 +258,9 @@
       .hero { padding: 100px 1.25rem 3.5rem; }
       .products, .projects { padding-left: 1.25rem; padding-right: 1.25rem; }
       .products-grid { grid-template-columns: 1fr; }
-      .rgrid { grid-template-columns: 1fr 1fr; }
+      .latest, .feature, .cols2, .duo { grid-template-columns: minmax(0, 1fr); }
+      .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .tools { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .about { padding: 4rem 1.25rem; }
       .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .about-left { position: static; }
@@ -240,7 +268,7 @@
       footer { padding: 2rem 1.25rem; }
       .section-rule { margin: 0 1.25rem; }
     }
-    @media (max-width: 600px) { .rgrid { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) { .cards, .tools { grid-template-columns: minmax(0, 1fr); } }
   </style>
 </head>
 <body>
@@ -257,6 +285,7 @@
     <a href="https://map.buildphillynow.org" target="_blank" class="nav-link">Dashboard</a>
     <div class="nav-divider"></div>
     <a href="#projects" class="nav-link">Research</a>
+    <a href="#tools" class="nav-link">Tools</a>
     <div class="nav-divider"></div>
     <a href="#about" class="nav-link">About</a>
   </div>
@@ -268,9 +297,9 @@
   <h1>Building more of what<br>Philadelphia needs to <em>thrive.</em></h1>
   <p class="hero-sub">Housing, transportation, and energy are the three biggest costs in most families' budgets. Build Philly Now covers the policy and the politics of building more of all three.</p>
   <div class="hero-issues">
-    <span class="issue-pill">Housing</span>
-    <span class="issue-pill">Infrastructure</span>
-    <span class="issue-pill">Energy</span>
+    <span class="issue-pill" style="background:#A5502F;border-color:#A5502F;color:#FFFFFF">Housing</span>
+    <span class="issue-pill" style="background:#3E6F98;border-color:#3E6F98;color:#FFFFFF">Transit</span>
+    <span class="issue-pill" style="background:#7A2B5A;border-color:#7A2B5A;color:#FFFFFF">Energy</span>
   </div>
 </section>
 
@@ -355,141 +384,141 @@
 <!-- RESEARCH -->
 <section class="projects" id="projects">
   <hr class="section-rule" style="margin: 0 0 2.5rem;">
-  <div class="projects-header">
-    <span class="projects-title">Research &amp; Analysis</span>
-    <span class="projects-sub">Original data work on housing, transit, energy, and the rules that shape building in Philadelphia.</span>
-  </div>
-  <div class="rgrid rgrid-one">
-      <a href="https://bpnguide.netlify.app/" target="_blank" class="rcard rcard-wide">
-        <div class="rcard-tags"><span class="rtag">Standing resource</span><span class="rtag">Zoning</span></div>
-        <div class="rcard-title">Philadelphia Development: A Field Guide</div>
-        <p class="rcard-desc">Plain-language references for Philadelphia zoning, housing, and development &mdash; including &ldquo;Who Decides What,&rdquo; a guide to 15 boards, commissions, and departments with their full current rosters.</p>
-        <span class="rcard-cta">Open the guide <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
-      </a>
-  </div>
-  <div class="rgroup">
-    <h3 class="rgroup-title">Housing</h3>
-    <div class="rgrid">
-      <a href="https://philly-toc.netlify.app/" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag">Zoning</span></div>
-        <div class="rcard-title">30,000 Homes: Strengthening Philadelphia&rsquo;s TOC Bills</div>
-        <p class="rcard-desc">Mayor Parker introduced five transit-oriented zoning bills. Here&rsquo;s what they do, and how City Council can build on them.</p>
-        <span class="rcard-cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
-      </a>
-      <a href="https://drive.google.com/file/d/16isOeQvng_6ChnLqgR9TX-6fH816s9ye/view" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag">Zoning</span><span class="rtag partner">Center City District</span></div>
-        <div class="rcard-title">Housing Capacity in Center City</div>
-        <p class="rcard-desc">About 79 million square feet of unused zoned capacity in Greater Center City&rsquo;s high-rise districts, 66.5 million of it in the Core &mdash; plus what transit-oriented zoning and public land could add.</p>
-        <span class="rcard-cta">Read the memo <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
-      </a>
-      <a href="https://phillyhousingproductionfund.netlify.app/" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag">Finance</span></div>
-        <div class="rcard-title">Philadelphia Housing Production Fund</div>
-        <p class="rcard-desc">A revolving construction loan fund to unlock 2,930 permitted, shovel-ready homes stalled in 39 projects &mdash; without new federal dollars.</p>
-        <span class="rcard-cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
-      </a>
-      <a href="https://phillyabatements.netlify.app/" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag">Tax</span></div>
-        <div class="rcard-title">Examining Philadelphia&rsquo;s Tax Abatement Tools</div>
-        <p class="rcard-desc">The fiscal case for Philadelphia&rsquo;s proposed 20-year office-to-residential conversion abatement.</p>
-        <span class="rcard-cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
-      </a>
-      <a href="https://phillyexpiringabatements.netlify.app/" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag">Tax</span></div>
-        <div class="rcard-title">What Expiring Abatements Are Worth</div>
-        <p class="rcard-desc">How much property tax revenue is returning to the rolls as 10-year residential abatements expire &mdash; 2016 actual through 2036 projected.</p>
-        <span class="rcard-cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
-      </a>
-      <a href="https://turnthekey.netlify.app/" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag">Land Bank</span></div>
-        <div class="rcard-title">Who Turn the Key Actually Houses</div>
-        <p class="rcard-desc">What the Land Bank&rsquo;s Turn the Key program is delivering: 1,048 brand-new homes for working-class Philadelphians, $1,400 mortgages, and a 66% AMI average buyer.</p>
-        <span class="rcard-cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
-      </a>
-      <a href="https://min-analysis.netlify.app/" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag">Zoning</span></div>
-        <div class="rcard-title">The MIN Overlay: A Parcel-Level Impact Analysis</div>
-        <p class="rcard-desc">The Mixed-Income Neighborhoods overlay has produced 19 affordable units in four years while deterring an estimated 1,000&ndash;1,400 housing units.</p>
-        <span class="rcard-cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
-      </a>
-      <a href="https://bpn-oz-analysis.netlify.app/" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag">Opportunity Zones</span></div>
-        <div class="rcard-title">Philadelphia Opportunity Zones, Ranked for the Next Round</div>
-        <p class="rcard-desc">Ranking Philadelphia&rsquo;s Opportunity Zone&ndash;eligible census tracts by transit access, regional jobs access, and recent permit and business activity.</p>
-        <span class="rcard-cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
-      </a>
-      <a href="https://pa-oz-rankings.netlify.app/" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag">Opportunity Zones</span></div>
-        <div class="rcard-title">Pennsylvania Opportunity Zones 2027</div>
-        <p class="rcard-desc">Where should Pennsylvania put its next Opportunity Zones? A statewide ranking ahead of the 2027 designations.</p>
-        <span class="rcard-cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
-      </a>
-      <a href="https://pa-housing-votes.netlify.app/" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag">State policy</span><span class="rtag">Tracker</span></div>
-        <div class="rcard-title">PA Housing Votes: Zoning Reform Tracker</div>
-        <p class="rcard-desc">Where every PA House and Senate member stands on housing affordability legislation &mdash; a vote tracker and cosponsor map for current and historical bills.</p>
-        <span class="rcard-cta">Open the tracker <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
-      </a>
-      <a href="https://norrissquarettk.netlify.app/" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag">Land Bank</span></div>
-        <div class="rcard-title">Two Years, 30 Homes: The Civetta / Norris Square Timeline</div>
-        <p class="rcard-desc">How a two-year bid to build 30 Turn the Key homes cleared the Land Bank board &mdash; and landed in bureaucratic purgatory.</p>
-        <span class="rcard-cta">Read the timeline <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
-      </a>
-      <a href="https://oldcitypermits.netlify.app/" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag">Permitting</span></div>
-        <div class="rcard-title">Old City Permitting Analysis</div>
-        <p class="rcard-desc">19 years of city data: 53% of zoning appeals tied to a CTR overlay trigger, a ~58-day median wait for a hearing &mdash; and a 98% approval rate for restaurants.</p>
-        <span class="rcard-cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
-      </a>
-      <a href="https://ncaoverlaystudy.netlify.app/" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag">Permitting</span></div>
-        <div class="rcard-title">North Delaware Commercial Overlay Study</div>
-        <p class="rcard-desc">The overlay makes restaurants seek a special exception even where base zoning allows them &mdash; and 97% are approved anyway.</p>
-        <span class="rcard-cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
-      </a>
-      <div class="rcard soon">
-        <div class="rcard-tags"><span class="rtag">Parcel analysis</span><span class="rtag partner">With AIA &amp; BIA</span></div>
-        <div class="rcard-title">Point Access Blocks: Parcel Analysis</div>
-        <p class="rcard-desc">Which Philadelphia parcels could support point access block housing? A joint analysis with the AIA and BIA.</p>
-        <span class="rcard-cta">Launching soon</span>
+  <p class="eyebrow"><span>Latest release</span></p>
+  <div class="latest">
+    <a class="feature" href="https://drive.google.com/file/d/16isOeQvng_6ChnLqgR9TX-6fH816s9ye/view" target="_blank" rel="noopener">
+      <div class="txt">
+        <span class="tag">Housing &middot; Zoning</span>
+        <div class="ttl">Housing Capacity in Center City</div>
+        <p>About 79 million square feet of unused zoned capacity in Greater Center City&rsquo;s high-rise districts, 66.5 million of it in the Core &mdash; plus what transit-oriented zoning and public land could add.</p>
+        <span class="date">Prepared for Center City District &middot; September 2026</span>
       </div>
-      <div class="rcard soon">
-        <div class="rcard-tags"><span class="rtag">Tracker</span></div>
-        <div class="rcard-title">ZBA Watch</div>
-        <p class="rcard-desc">Tracking Zoning Board of Adjustment cases across Philadelphia.</p>
-        <span class="rcard-cta">Launching soon</span>
-      </div>
-      <div class="rcard soon">
-        <div class="rcard-tags"><span class="rtag">Tracker</span><span class="rtag">Land Bank</span></div>
-        <div class="rcard-title">Land Bank Watch</div>
-        <p class="rcard-desc">Following Land Bank board decisions, dispositions, and pipeline.</p>
-        <span class="rcard-cta">Launching soon</span>
-      </div>
+      <div class="ffig"><svg viewBox="0 0 320 150" role="img" aria-label="Unused capacity by quarter of Center City"><text x="14" y="20" fill="#FFFFFF" font-size="9.5" font-weight="700">BY QUARTER OF CENTER CITY</text><text x="14" y="45.0" fill="#FFFFFF" font-size="9.5">Market East</text><rect x="96" y="34.0" width="170.0" height="15" rx="2" fill="#FFFFFF"/><text x="272.0" y="45.0" fill="#FFFFFF" font-size="9.5" font-weight="700">31.7</text><text x="14" y="71.5" fill="#FFFFFF" font-size="9.5">Market West</text><rect x="96" y="60.5" width="116.4" height="15" rx="2" fill="#FFFFFF"/><text x="218.4" y="71.5" fill="#FFFFFF" font-size="9.5" font-weight="700">21.7</text><text x="14" y="98.0" fill="#FFFFFF" font-size="9.5">North Broad</text><rect x="96" y="87.0" width="108.9" height="15" rx="2" fill="#FFFFFF"/><text x="210.9" y="98.0" fill="#FFFFFF" font-size="9.5" font-weight="700">20.3</text><text x="14" y="124.5" fill="#FFFFFF" font-size="9.5">South Broad</text><rect x="96" y="113.5" width="100.3" height="15" rx="2" fill="#FFFFFF"/><text x="202.3" y="124.5" fill="#FFFFFF" font-size="9.5" font-weight="700">18.7</text><text x="14" y="144" fill="#FFFFFF" font-size="8">Millions of sq ft of unused capacity within a quarter mile of a station</text></svg></div>
+    </a>
+    <div class="recent">
+      <a class="mini" href="https://phillyhousingproductionfund.netlify.app/" target="_blank" rel="noopener"><span class="date">August 2026</span><div class="ttl">Philadelphia Housing Production Fund</div></a>
+      <a class="mini" href="https://pa-oz-rankings.netlify.app/" target="_blank" rel="noopener"><span class="date">May 2026</span><div class="ttl">Pennsylvania Opportunity Zones 2027</div></a>
+      <a class="mini" href="https://bpn-oz-analysis.netlify.app/" target="_blank" rel="noopener"><span class="date">April 22, 2026</span><div class="ttl">Philadelphia Opportunity Zones, Ranked for the Next Round</div></a>
     </div>
   </div>
-  <div class="rgroup">
-    <h3 class="rgroup-title">Transit</h3>
-    <div class="rgrid">
-      <a href="https://phillystudentfares.netlify.app/" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag partner">Transit Forward Philly</span></div>
-        <div class="rcard-title">Student Fares That Work</div>
-        <p class="rcard-desc">Student passes stop working at 8 PM, on weekends, and all summer &mdash; and 31,600 students can&rsquo;t get one at all. A restructured SEPTA&ndash;School District deal can fix that.</p>
-        <span class="rcard-cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+  <div class="soon-wide">
+    <span class="tag n">Coming soon</span>
+    <div class="ttl">Transit-Oriented Communities: All Ten Council Districts</div>
+    <p>Scenario reports and maps for every council district, released together.</p>
+  </div>
+
+  <div class="issues-head"><span class="projects-title">Research &amp; Analysis</span><span class="projects-sub">Original data work on housing, transit, and energy in Philadelphia and Pennsylvania.</span></div>
+  <div class="issue">
+    <div class="band H" style="background:#A5502F"><h3>Housing</h3><p>Zoning, permitting, the Land Bank, tax policy, and state legislation.</p><span class="cnt">12 reports</span></div>
+    <div class="cards">
+      <a href="https://drive.google.com/file/d/16isOeQvng_6ChnLqgR9TX-6fH816s9ye/view" target="_blank" rel="noopener" class="rc">
+        <div class="fig" style="background:#F4E5DF"><svg viewBox="0 0 320 150" role="img" aria-label="Unused capacity by quarter of Center City"><text x="14" y="20" fill="#4A5E52" font-size="9.5" font-weight="700">BY QUARTER OF CENTER CITY</text><text x="14" y="45.0" fill="#0D1810" font-size="9.5">Market East</text><rect x="96" y="34.0" width="170.0" height="15" rx="2" fill="#C2714F"/><text x="272.0" y="45.0" fill="#0D1810" font-size="9.5" font-weight="700">31.7</text><text x="14" y="71.5" fill="#0D1810" font-size="9.5">Market West</text><rect x="96" y="60.5" width="116.4" height="15" rx="2" fill="#C2714F"/><text x="218.4" y="71.5" fill="#0D1810" font-size="9.5" font-weight="700">21.7</text><text x="14" y="98.0" fill="#0D1810" font-size="9.5">North Broad</text><rect x="96" y="87.0" width="108.9" height="15" rx="2" fill="#C2714F"/><text x="210.9" y="98.0" fill="#0D1810" font-size="9.5" font-weight="700">20.3</text><text x="14" y="124.5" fill="#0D1810" font-size="9.5">South Broad</text><rect x="96" y="113.5" width="100.3" height="15" rx="2" fill="#C2714F"/><text x="202.3" y="124.5" fill="#0D1810" font-size="9.5" font-weight="700">18.7</text><text x="14" y="144" fill="#4A5E52" font-size="8">Millions of sq ft of unused capacity within a quarter mile of a station</text></svg></div>
+        <div class="body"><div class="tags"><span class="tag" style="background:#F2E0D8;color:#984A2B">Zoning</span><span class="tag n">Center City District</span></div><div class="ttl">Housing Capacity in Center City</div><p>About 79 million sq ft of unused zoned capacity in Greater Center City’s high-rise districts, 66.5 million of it in the Core.</p><span class="cta">Read the memo <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+      </a>
+      <a href="https://phillyhousingproductionfund.netlify.app/" target="_blank" rel="noopener" class="rc">
+        <div class="fig" style="background:#F4E5DF"><svg viewBox="0 0 320 150" role="img" aria-label="Stalled homes"><text x="14" y="52" fill="#0D1810" font-size="38" font-weight="800" font-family="Unbounded, Arial Black, sans-serif">2,930</text><text x="14" y="72" fill="#0D1810" font-size="10.5" font-weight="600">permitted homes stalled</text><text x="14" y="86" fill="#4A5E52" font-size="9" font-weight="400">39 projects, all ten council districts</text><circle cx="18.0" cy="108.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="29.0" cy="108.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="40.0" cy="108.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="51.0" cy="108.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="62.0" cy="108.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="73.0" cy="108.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="84.0" cy="108.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="95.0" cy="108.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="106.0" cy="108.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="117.0" cy="108.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="128.0" cy="108.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="139.0" cy="108.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="150.0" cy="108.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="18.0" cy="119.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="29.0" cy="119.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="40.0" cy="119.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="51.0" cy="119.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="62.0" cy="119.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="73.0" cy="119.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="84.0" cy="119.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="95.0" cy="119.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="106.0" cy="119.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="117.0" cy="119.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="128.0" cy="119.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="139.0" cy="119.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="150.0" cy="119.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="18.0" cy="130.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="29.0" cy="130.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="40.0" cy="130.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="51.0" cy="130.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="62.0" cy="130.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="73.0" cy="130.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="84.0" cy="130.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="95.0" cy="130.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="106.0" cy="130.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="117.0" cy="130.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="128.0" cy="130.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="139.0" cy="130.0" r="3.74" fill="#C2714F" opacity="1"/><circle cx="150.0" cy="130.0" r="3.74" fill="#C2714F" opacity="1"/></svg></div>
+        <div class="body"><div class="tags"><span class="tag" style="background:#F2E0D8;color:#984A2B">Finance</span></div><div class="ttl">Philadelphia Housing Production Fund</div><p>A revolving construction loan fund to unlock permitted, shovel-ready homes stalled in 39 projects &mdash; without new federal dollars.</p><span class="cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+      </a>
+      <a href="https://turnthekey.netlify.app/" target="_blank" rel="noopener" class="rc">
+        <div class="fig" style="background:#F4E5DF"><svg viewBox="0 0 320 150" role="img" aria-label="Turn the Key results"><text x="14" y="50" fill="#0D1810" font-size="34" font-weight="800" font-family="Unbounded, Arial Black, sans-serif">1,048</text><text x="14" y="68" fill="#0D1810" font-size="10.5" font-weight="600">new homes</text><rect x="14" y="88" width="142" height="34" rx="17" fill="#C2714F"/><text x="85" y="109" text-anchor="middle" font-size="12" font-weight="800" fill="#0D1810">$1,400 mortgage</text><rect x="164" y="88" width="142" height="34" rx="17" fill="#C2714F" opacity="0.3"/><text x="235" y="109" text-anchor="middle" font-size="12" font-weight="800" fill="#0D1810">66% AMI buyer</text></svg></div>
+        <div class="body"><div class="tags"><span class="tag" style="background:#F2E0D8;color:#984A2B">Land Bank</span></div><div class="ttl">Who Turn the Key Actually Houses</div><p>What the Land Bank’s Turn the Key program is delivering: 1,048 brand-new homes for working-class Philadelphians.</p><span class="cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+      </a>
+      <a href="https://min-analysis.netlify.app/" target="_blank" rel="noopener" class="rc">
+        <div class="fig" style="background:#F4E5DF"><svg viewBox="0 0 320 150" role="img" aria-label="MIN overlay outcomes"><text x="14" y="20" fill="#4A5E52" font-size="9.5" font-weight="700">FOUR YEARS OF THE OVERLAY</text><text x="14" y="55" fill="#0D1810" font-size="9.5" font-weight="400">Affordable units built</text><rect x="14" y="61" width="5" height="16" rx="1" fill="#C2714F"/><text x="27" y="74" fill="#0D1810" font-size="11" font-weight="800">19</text><text x="14" y="104" fill="#0D1810" font-size="9.5" font-weight="400">Units estimated deterred</text><rect x="14" y="110" width="200" height="16" rx="2" fill="#C2714F" opacity="0.3"/><rect x="164" y="110" width="50" height="16" rx="2" fill="#C2714F"/><text x="222" y="123" fill="#0D1810" font-size="11" font-weight="800">1,000–1,400</text></svg></div>
+        <div class="body"><div class="tags"><span class="tag" style="background:#F2E0D8;color:#984A2B">Zoning</span></div><div class="ttl">The MIN Overlay: A Parcel-Level Impact Analysis</div><p>The Mixed-Income Neighborhoods overlay has produced 19 affordable units in four years while deterring an estimated 1,000&ndash;1,400 housing units.</p><span class="cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+      </a>
+      <a href="https://oldcitypermits.netlify.app/" target="_blank" rel="noopener" class="rc">
+        <div class="fig" style="background:#F4E5DF"><svg viewBox="0 0 320 150" role="img" aria-label="Old City permitting stats"><text x="14" y="20" fill="#4A5E52" font-size="9.5" font-weight="700">2007–2026, OLD CITY</text><text x="14" y="66" fill="#C2714F" font-size="32" font-weight="800" font-family="Unbounded, Arial Black, sans-serif">53%</text><text x="14" y="82" fill="#0D1810" font-size="9" font-weight="400">of zoning appeals</text><text x="14" y="93" fill="#0D1810" font-size="9" font-weight="400">tied to the overlay</text><text x="176" y="66" fill="#C2714F" font-size="32" font-weight="800" font-family="Unbounded, Arial Black, sans-serif">98%</text><text x="176" y="82" fill="#0D1810" font-size="9" font-weight="400">restaurant</text><text x="176" y="93" fill="#0D1810" font-size="9" font-weight="400">approval rate</text><text x="14" y="130" fill="#0D1810" font-size="10.5" font-weight="700">~58 days median wait for a hearing</text></svg></div>
+        <div class="body"><div class="tags"><span class="tag" style="background:#F2E0D8;color:#984A2B">Permitting</span></div><div class="ttl">Old City Permitting Analysis</div><p>19 years of city data on how the Center City overlay affects restaurants and other businesses.</p><span class="cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+      </a>
+      <a href="https://ncaoverlaystudy.netlify.app/" target="_blank" rel="noopener" class="rc">
+        <div class="fig" style="background:#F4E5DF"><svg viewBox="0 0 320 150" role="img" aria-label="Approval rate"><circle cx="64" cy="76" r="34" fill="none" stroke="#C2714F" stroke-opacity="0.3" stroke-width="13"/><circle cx="64" cy="76" r="34" fill="none" stroke="#C2714F" stroke-width="13" stroke-dasharray="207.2 213.6" transform="rotate(-90 64 76)"/><text text-anchor="middle" x="64" y="81" fill="#0D1810" font-size="15" font-weight="800" font-family="Unbounded, Arial Black, sans-serif">97%</text><text x="124" y="66" fill="#0D1810" font-size="11" font-weight="600">of restaurant requests for a</text><text x="124" y="81" fill="#0D1810" font-size="11" font-weight="600">special exception are approved</text><text x="124" y="100" fill="#4A5E52" font-size="9" font-weight="400">North Delaware corridors, 2007–2025</text></svg></div>
+        <div class="body"><div class="tags"><span class="tag" style="background:#F2E0D8;color:#984A2B">Permitting</span></div><div class="ttl">North Delaware Commercial Overlay Study</div><p>The overlay makes restaurants seek a special exception even where base zoning allows them &mdash; and 97% are approved anyway.</p><span class="cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+      </a>
+      <a href="https://norrissquarettk.netlify.app/" target="_blank" rel="noopener" class="rc">
+        <div class="fig" style="background:#F4E5DF"><svg viewBox="0 0 320 150" role="img" aria-label="Norris Square timeline"><text x="14" y="56" fill="#0D1810" font-size="36" font-weight="800" font-family="Unbounded, Arial Black, sans-serif">2 years</text><text x="14" y="76" fill="#0D1810" font-size="10.5" font-weight="600">from first outreach to a Land Bank vote</text><text x="14" y="120" fill="#C2714F" font-size="30" font-weight="800" font-family="Unbounded, Arial Black, sans-serif">30</text><text x="80" y="120" fill="#0D1810" font-size="10.5" font-weight="600">Turn the Key homes, still no deal</text></svg></div>
+        <div class="body"><div class="tags"><span class="tag" style="background:#F2E0D8;color:#984A2B">Land Bank</span></div><div class="ttl">Two Years, 30 Homes: The Civetta / Norris Square Timeline</div><p>How a two-year bid to build 30 Turn the Key homes cleared the Land Bank board &mdash; and landed in bureaucratic purgatory.</p><span class="cta">Read the timeline <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+      </a>
+      <a href="https://philly-toc.netlify.app/" target="_blank" rel="noopener" class="rc">
+        <div class="fig" style="background:#F4E5DF"><svg viewBox="0 0 320 150" role="img" aria-label="Five TOC bills"><text x="14" y="64" fill="#C2714F" font-size="52" font-weight="800" font-family="Unbounded, Arial Black, sans-serif">5</text><text x="56" y="50" fill="#0D1810" font-size="11" font-weight="600">transit-oriented</text><text x="56" y="65" fill="#0D1810" font-size="11" font-weight="600">zoning bills introduced</text><text x="56" y="80" fill="#0D1810" font-size="11" font-weight="600">by Mayor Parker</text><text x="14" y="124" fill="#4A5E52" font-size="9.5" font-weight="400">What they do, and how Council can build on them</text></svg></div>
+        <div class="body"><div class="tags"><span class="tag" style="background:#F2E0D8;color:#984A2B">Zoning</span></div><div class="ttl">30,000 Homes: Strengthening Philadelphia’s TOC Bills</div><p>Mayor Parker introduced five transit-oriented zoning bills. Here’s what they do, and how City Council can build on them.</p><span class="cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+      </a>
+      <a href="https://bpn-oz-analysis.netlify.app/" target="_blank" rel="noopener" class="rc">
+        <div class="fig" style="background:#F4E5DF"><svg viewBox="0 0 320 150" role="img" aria-label="Philadelphia opportunity zones"><text x="14" y="20" fill="#4A5E52" font-size="9.5" font-weight="700">NEXT ROUND: 2027</text><text x="14" y="72" fill="#C2714F" font-size="44" font-weight="800" font-family="Unbounded, Arial Black, sans-serif">82</text><text x="104" y="58" fill="#0D1810" font-size="11" font-weight="600">Opportunity Zones in</text><text x="104" y="73" fill="#0D1810" font-size="11" font-weight="600">Philadelphia today</text><text x="14" y="116" fill="#0D1810" font-size="10" font-weight="600">Tracts ranked by transit access, jobs access</text><text x="14" y="130" fill="#0D1810" font-size="10" font-weight="600">and recent permit and business activity</text></svg></div>
+        <div class="body"><div class="tags"><span class="tag" style="background:#F2E0D8;color:#984A2B">Opportunity Zones</span></div><div class="ttl">Philadelphia Opportunity Zones, Ranked for the Next Round</div><p>Ranking Philadelphia’s Opportunity Zone&ndash;eligible census tracts by transit access, regional jobs access, and recent permit and business activity.</p><span class="cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+      </a>
+      <a href="https://pa-oz-rankings.netlify.app/" target="_blank" rel="noopener" class="rc">
+        <div class="fig" style="background:#F4E5DF"><svg viewBox="0 0 320 150" role="img" aria-label="Opportunity zones in Pennsylvania"><text x="14" y="42" fill="#0D1810" font-size="36" font-weight="800" font-family="Unbounded, Arial Black, sans-serif">82</text><text x="14" y="60" fill="#0D1810" font-size="10" font-weight="600">of 300 PA zones</text><text x="14" y="74" fill="#4A5E52" font-size="9" font-weight="400">are in Philadelphia today</text><circle cx="152.0" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="158.4" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="164.8" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="171.2" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="177.6" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="184.0" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="190.4" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="196.8" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="203.2" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="209.6" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="216.0" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="222.4" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="228.8" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="235.2" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="241.6" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="248.0" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="254.4" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="260.8" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="267.2" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="273.6" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="280.0" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="286.4" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="292.8" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="299.2" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="305.6" cy="24.0" r="2.18" fill="#C2714F" opacity="1"/><circle cx="152.0" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="158.4" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="164.8" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="171.2" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="177.6" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="184.0" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="190.4" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="196.8" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="203.2" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="209.6" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="216.0" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="222.4" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="228.8" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="235.2" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="241.6" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="248.0" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="254.4" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="260.8" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="267.2" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="273.6" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="280.0" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="286.4" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="292.8" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="299.2" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="305.6" cy="30.4" r="2.18" fill="#C2714F" opacity="1"/><circle cx="152.0" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="158.4" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="164.8" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="171.2" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="177.6" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="184.0" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="190.4" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="196.8" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="203.2" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="209.6" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="216.0" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="222.4" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="228.8" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="235.2" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="241.6" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="248.0" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="254.4" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="260.8" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="267.2" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="273.6" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="280.0" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="286.4" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="292.8" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="299.2" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="305.6" cy="36.8" r="2.18" fill="#C2714F" opacity="1"/><circle cx="152.0" cy="43.2" r="2.18" fill="#C2714F" opacity="1"/><circle cx="158.4" cy="43.2" r="2.18" fill="#C2714F" opacity="1"/><circle cx="164.8" cy="43.2" r="2.18" fill="#C2714F" opacity="1"/><circle cx="171.2" cy="43.2" r="2.18" fill="#C2714F" opacity="1"/><circle cx="177.6" cy="43.2" r="2.18" fill="#C2714F" opacity="1"/><circle cx="184.0" cy="43.2" r="2.18" fill="#C2714F" opacity="1"/><circle cx="190.4" cy="43.2" r="2.18" fill="#C2714F" opacity="1"/><circle cx="196.8" cy="43.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="203.2" cy="43.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="209.6" cy="43.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="216.0" cy="43.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="222.4" cy="43.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="228.8" cy="43.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="235.2" cy="43.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="241.6" cy="43.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="248.0" cy="43.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="254.4" cy="43.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="260.8" cy="43.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="267.2" cy="43.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="273.6" cy="43.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="280.0" cy="43.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="286.4" cy="43.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="292.8" cy="43.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="299.2" cy="43.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="305.6" cy="43.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="152.0" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="158.4" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="164.8" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="171.2" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="177.6" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="184.0" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="190.4" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="196.8" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="203.2" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="209.6" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="216.0" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="222.4" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="228.8" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="235.2" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="241.6" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="248.0" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="254.4" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="260.8" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="267.2" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="273.6" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="280.0" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="286.4" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="292.8" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="299.2" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="305.6" cy="49.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="152.0" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="158.4" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="164.8" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="171.2" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="177.6" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="184.0" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="190.4" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="196.8" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="203.2" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="209.6" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="216.0" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="222.4" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="228.8" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="235.2" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="241.6" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="248.0" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="254.4" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="260.8" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="267.2" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="273.6" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="280.0" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="286.4" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="292.8" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="299.2" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="305.6" cy="56.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="152.0" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="158.4" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="164.8" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="171.2" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="177.6" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="184.0" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="190.4" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="196.8" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="203.2" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="209.6" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="216.0" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="222.4" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="228.8" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="235.2" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="241.6" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="248.0" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="254.4" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="260.8" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="267.2" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="273.6" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="280.0" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="286.4" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="292.8" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="299.2" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="305.6" cy="62.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="152.0" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="158.4" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="164.8" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="171.2" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="177.6" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="184.0" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="190.4" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="196.8" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="203.2" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="209.6" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="216.0" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="222.4" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="228.8" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="235.2" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="241.6" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="248.0" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="254.4" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="260.8" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="267.2" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="273.6" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="280.0" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="286.4" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="292.8" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="299.2" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="305.6" cy="68.8" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="152.0" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="158.4" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="164.8" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="171.2" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="177.6" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="184.0" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="190.4" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="196.8" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="203.2" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="209.6" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="216.0" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="222.4" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="228.8" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="235.2" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="241.6" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="248.0" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="254.4" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="260.8" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="267.2" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="273.6" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="280.0" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="286.4" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="292.8" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="299.2" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="305.6" cy="75.2" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="152.0" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="158.4" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="164.8" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="171.2" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="177.6" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="184.0" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="190.4" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="196.8" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="203.2" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="209.6" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="216.0" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="222.4" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="228.8" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="235.2" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="241.6" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="248.0" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="254.4" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="260.8" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="267.2" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="273.6" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="280.0" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="286.4" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="292.8" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="299.2" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="305.6" cy="81.6" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="152.0" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="158.4" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="164.8" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="171.2" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="177.6" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="184.0" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="190.4" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="196.8" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="203.2" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="209.6" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="216.0" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="222.4" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="228.8" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="235.2" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="241.6" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="248.0" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="254.4" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="260.8" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="267.2" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="273.6" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="280.0" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="286.4" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="292.8" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="299.2" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="305.6" cy="88.0" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="152.0" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="158.4" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="164.8" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="171.2" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="177.6" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="184.0" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="190.4" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="196.8" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="203.2" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="209.6" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="216.0" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="222.4" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="228.8" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="235.2" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="241.6" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="248.0" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="254.4" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="260.8" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="267.2" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="273.6" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="280.0" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="286.4" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="292.8" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="299.2" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/><circle cx="305.6" cy="94.4" r="2.18" fill="#C2714F" opacity="0.28"/></svg></div>
+        <div class="body"><div class="tags"><span class="tag" style="background:#F2E0D8;color:#984A2B">Opportunity Zones</span></div><div class="ttl">Pennsylvania Opportunity Zones 2027</div><p>Where should Pennsylvania put its next Opportunity Zones? A statewide ranking ahead of the 2027 designations.</p><span class="cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+      </a>
+      <a href="https://phillyabatements.netlify.app/" target="_blank" rel="noopener" class="rc">
+        <div class="fig" style="background:#F4E5DF"><svg viewBox="0 0 320 150" role="img" aria-label="Abatement"><text x="14" y="62" fill="#C2714F" font-size="40" font-weight="800" font-family="Unbounded, Arial Black, sans-serif">20-year</text><text x="14" y="84" fill="#0D1810" font-size="11" font-weight="600">proposed abatement for</text><text x="14" y="99" fill="#0D1810" font-size="11" font-weight="600">office-to-residential conversions</text><text x="14" y="124" fill="#4A5E52" font-size="9.5" font-weight="400">The fiscal case for and against</text></svg></div>
+        <div class="body"><div class="tags"><span class="tag" style="background:#F2E0D8;color:#984A2B">Tax</span></div><div class="ttl">Examining Philadelphia’s Tax Abatement Tools</div><p>The fiscal case for Philadelphia’s proposed 20-year office-to-residential conversion abatement.</p><span class="cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+      </a>
+      <a href="https://phillyexpiringabatements.netlify.app/" target="_blank" rel="noopener" class="rc">
+        <div class="fig" style="background:#F4E5DF"><svg viewBox="0 0 320 150" role="img" aria-label="Expiring abatements"><text x="14" y="20" fill="#4A5E52" font-size="9.5" font-weight="700">10-YEAR RESIDENTIAL ABATEMENTS</text><text x="14" y="72" fill="#C2714F" font-size="30" font-weight="800" font-family="Unbounded, Arial Black, sans-serif">2016–2036</text><text x="14" y="94" fill="#0D1810" font-size="11" font-weight="600">Revenue returning to the rolls as</text><text x="14" y="109" fill="#0D1810" font-size="11" font-weight="600">abatements expire</text><text x="14" y="132" fill="#4A5E52" font-size="9" font-weight="400">2016 actual through 2036 projected</text></svg></div>
+        <div class="body"><div class="tags"><span class="tag" style="background:#F2E0D8;color:#984A2B">Tax</span></div><div class="ttl">What Expiring Abatements Are Worth</div><p>How much property tax revenue is returning to the rolls as 10-year residential abatements expire &mdash; 2016 actual through 2036 projected.</p><span class="cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
       </a>
     </div>
   </div>
-  <div class="rgroup">
-    <h3 class="rgroup-title">Energy</h3>
-    <div class="rgrid">
-      <a href="https://bpn-interconnection.netlify.app/" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag">Generation</span><span class="rtag">Permitting</span></div>
-        <div class="rcard-title">Federal Tax Cliff Threatens Pennsylvania&rsquo;s Energy Generation Pipeline</div>
-        <p class="rcard-desc">91 PA generation projects totaling 1,758 MW have signed PJM interconnection agreements and are ready to build &mdash; but are stuck on state and local permitting as federal tax credits expire.</p>
-        <span class="rcard-cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+  <div class="duo">
+    <div class="issue">
+      <div class="band T" style="background:#3E6F98"><h3>Transit</h3><p>Fares, service, and the projects that connect the region.</p><span class="cnt">1 report</span></div>
+      <div class="cards one">
+      <a href="https://phillystudentfares.netlify.app/" target="_blank" rel="noopener" class="rc">
+        <div class="fig" style="background:#E1EAF2"><svg viewBox="0 0 320 150" role="img" aria-label="Student fare gaps"><text x="14" y="52" fill="#0D1810" font-size="40" font-weight="800" font-family="Unbounded, Arial Black, sans-serif">8 PM</text><text x="14" y="70" fill="#0D1810" font-size="10.5" font-weight="600">when a student pass stops working</text><text x="14" y="108" fill="#5B8DB8" font-size="24" font-weight="800" font-family="Unbounded, Arial Black, sans-serif">31,600</text><text x="14" y="126" fill="#0D1810" font-size="10.5" font-weight="600">students can’t get one at all</text></svg></div>
+        <div class="body"><div class="tags"><span class="tag" style="background:#DBE6EF;color:#39668C">Transit Forward Philly</span></div><div class="ttl">Student Fares That Work</div><p>Student passes stop working at 8 PM, on weekends, and all summer &mdash; and 31,600 students can’t get one at all.</p><span class="cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
       </a>
+      </div>
+    </div>
+    <div class="issue">
+      <div class="band E" style="background:#7A2B5A"><h3>Energy</h3><p>Generation, interconnection, and the permits that hold projects up.</p><span class="cnt">1 report</span></div>
+      <div class="cards one">
+      <a href="https://bpn-interconnection.netlify.app/" target="_blank" rel="noopener" class="rc">
+        <div class="fig" style="background:#EFE2EA"><svg viewBox="0 0 320 150" role="img" aria-label="Generation projects stuck on permitting"><text x="14" y="46" fill="#0D1810" font-size="34" font-weight="800" font-family="Unbounded, Arial Black, sans-serif">1,758 MW</text><text x="14" y="64" fill="#0D1810" font-size="10.5" font-weight="600">91 generation projects ready to build</text><circle cx="18.0" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="29.5" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="41.0" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="52.5" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="64.0" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="75.5" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="87.0" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="98.5" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="110.0" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="121.5" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="133.0" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="144.5" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="156.0" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="167.5" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="179.0" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="190.5" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="202.0" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="213.5" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="225.0" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="236.5" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="248.0" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="259.5" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="271.0" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="282.5" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="294.0" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="305.5" cy="96.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="18.0" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="29.5" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="41.0" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="52.5" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="64.0" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="75.5" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="87.0" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="98.5" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="110.0" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="121.5" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="133.0" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="144.5" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="156.0" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="167.5" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="179.0" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="190.5" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="202.0" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="213.5" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="225.0" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="236.5" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="248.0" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="259.5" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="271.0" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="282.5" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="294.0" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="305.5" cy="107.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="18.0" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="29.5" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="41.0" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="52.5" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="64.0" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="75.5" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="87.0" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="98.5" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="110.0" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="121.5" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="133.0" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="144.5" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="156.0" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="167.5" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="179.0" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="190.5" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="202.0" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="213.5" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="225.0" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="236.5" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="248.0" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="259.5" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="271.0" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="282.5" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="294.0" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="305.5" cy="119.0" r="3.91" fill="#A8608A" opacity="1"/><circle cx="18.0" cy="130.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="29.5" cy="130.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="41.0" cy="130.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="52.5" cy="130.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="64.0" cy="130.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="75.5" cy="130.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="87.0" cy="130.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="98.5" cy="130.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="110.0" cy="130.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="121.5" cy="130.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="133.0" cy="130.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="144.5" cy="130.5" r="3.91" fill="#A8608A" opacity="1"/><circle cx="156.0" cy="130.5" r="3.91" fill="#A8608A" opacity="1"/></svg></div>
+        <div class="body"><div class="tags"><span class="tag" style="background:#ECDCE5;color:#7A2B5A">Generation</span></div><div class="ttl">Federal Tax Cliff Threatens Pennsylvania’s Energy Generation Pipeline</div><p>91 PA generation projects totaling 1,758 MW have signed PJM interconnection agreements and are ready to build &mdash; but are stuck on state and local permitting.</p><span class="cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+      </a>
+      </div>
     </div>
   </div>
+</section>
+
+<!-- TOOLS -->
+<section class="projects tools-sec" id="tools" style="padding-top:0">
+  <p class="eyebrow"><span>Tools &amp; trackers</span></p>
+  <div class="tools">
+    <a class="tool" href="https://pa-housing-votes.netlify.app/" target="_blank" rel="noopener">
+      <div class="fig" style="background:#F4E5DF"><svg viewBox="0 0 320 150" role="img" aria-label="Housing bills"><text x="14" y="30" fill="#4A5E52" font-size="9.5" font-weight="700">BILLS ON THE TRACKER</text><rect x="14" y="58" width="90" height="34" rx="17" fill="#C2714F" opacity="0.9"/><text x="59" y="79" text-anchor="middle" font-size="12" font-weight="800" fill="#0D1810">HB 2186</text><rect x="112" y="58" width="90" height="34" rx="17" fill="#C2714F" opacity="0.3"/><text x="157" y="79" text-anchor="middle" font-size="12" font-weight="800" fill="#0D1810">HB 2109</text><rect x="210" y="58" width="90" height="34" rx="17" fill="#C2714F" opacity="0.6"/><text x="255" y="79" text-anchor="middle" font-size="12" font-weight="800" fill="#0D1810">SB 1281</text><text x="14" y="124" fill="#0D1810" font-size="10" font-weight="600">ADUs, unrelated occupants, pre-approved plans,</text><text x="14" y="138" fill="#0D1810" font-size="10" font-weight="600">and state permit tracking</text></svg></div>
+      <div class="body"><div class="tags"><span class="tag" style="background:#F2E0D8;color:#984A2B">Tracker</span></div><div class="ttl">PA Housing Votes</div><p>Where every PA House and Senate member stands on housing affordability legislation.</p></div>
+    </a>
+    <div class="tool soon"><div class="body"><div class="tags"><span class="tag n">Coming soon</span></div><div class="ttl">Point Access Blocks</div><p>A parcel analysis with the AIA and BIA.</p></div></div>
+    <div class="tool soon"><div class="body"><div class="tags"><span class="tag n">Coming soon</span></div><div class="ttl">ZBA Watch</div><p>Zoning Board of Adjustment cases across Philadelphia.</p></div></div>
+    <div class="tool soon"><div class="body"><div class="tags"><span class="tag n">Coming soon</span></div><div class="ttl">Land Bank Watch</div><p>Land Bank board decisions and pipeline.</p></div></div>
+  </div>
+</section>
+
+<!-- NEWS + LUNCH -->
+<section class="projects" id="news-lunch" style="padding-top:0">
+  <div class="cols2">
+    <div>
+      <p class="eyebrow"><span>From BPN News</span><a href="https://buildphillynow.substack.com" target="_blank" rel="noopener">Read on Substack &rarr;</a></p>
+      <a class="post" href="https://buildphillynow.substack.com/p/bpn-news-roosevelt-boulevards-safety" target="_blank" rel="noopener"><span class="date">Sep 23, 2026</span><b>Roosevelt Boulevard&rsquo;s Safety Fixes Have a Date. The Subway Still Doesn&rsquo;t</b></a>
+      <a class="post" href="https://buildphillynow.substack.com/p/bpn-policy-brief-housing-capacity" target="_blank" rel="noopener"><span class="date">Sep 15, 2026</span><b>BPN Policy Brief: Housing Capacity in Center City</b></a>
+      <a class="post" href="https://buildphillynow.substack.com/p/two-demolitions-denied-and-a-haring" target="_blank" rel="noopener"><span class="date">Aug 31, 2026</span><b>Two Demolitions Denied, and a Haring Mural on Deck at the Historical Commission</b></a>
+    </div>
+    <div>
+      <p class="eyebrow"><span>Policy Lunch</span><a href="https://buildphillynow.substack.com" target="_blank" rel="noopener">All lunches &rarr;</a></p>
+      <a class="post" href="https://buildphillynow.substack.com/p/policy-lunch-925-lauren-smith-and" target="_blank" rel="noopener"><span class="date">Sep 25, 2026</span><b>Lauren Smith and Clint Randall, Center City District Housing Report</b></a>
+      <a class="post" href="https://buildphillynow.substack.com/p/policy-lunch-911-madeleine-marr-road" target="_blank" rel="noopener"><span class="date">Sep 11, 2026</span><b>Madeleine Marr, ROAD to Housing</b></a>
+      <a class="post" href="https://buildphillynow.substack.com/p/policy-lunch-724-vaughn-ross-on-opportunity" target="_blank" rel="noopener"><span class="date">Jul 24, 2026</span><b>Vaughn Ross on Opportunity Zones 2.0</b></a>
+    </div>
+  </div>
+  <a class="guide" href="https://bpnguide.netlify.app/" target="_blank" rel="noopener">
+    <span class="tag gtag">Standing resource</span>
+    <div class="ttl">Philadelphia Development: A Field Guide</div>
+    <p>Plain-language references for zoning, housing, and development &mdash; including &ldquo;Who Decides What,&rdquo; a guide to 15 boards, commissions, and departments with their full current rosters.</p>
+    <span class="cta">Open the guide <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+  </a>
 </section>
 
 <hr class="section-rule">
@@ -549,7 +578,7 @@
     <li><a href="https://map.buildphillynow.org" target="_blank">Dashboard</a></li>
     <li><a href="/community-standards/">Community Standards</a></li>
   </ul>
-  <span class="footer-copy">© 2025 Build Philly Now</span>
+  <span class="footer-copy">© 2026 Build Philly Now</span>
 </footer>
 
 
