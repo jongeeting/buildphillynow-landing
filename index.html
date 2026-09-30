@@ -50,7 +50,7 @@
 
     /* ── HERO ──────────────────────────────────────── */
     .hero {
-      padding: 150px 2.5rem 5rem;
+      padding: 150px 2.5rem 2.25rem;
       max-width: 980px;
       margin: 0 auto;
     }
@@ -64,25 +64,15 @@
     h1 em { color: var(--green); font-style: normal; }
     .hero-sub {
       font-size: 1.1rem; line-height: 1.72; color: var(--gray);
-      max-width: 640px; margin-bottom: 2.5rem; font-weight: 400;
+      max-width: 640px; margin-bottom: 0; font-weight: 400;
       opacity: 0; animation: fadeUp 0.55s 0.36s forwards;
-    }
-    .hero-issues {
-      display: flex; gap: 0.6rem; flex-wrap: wrap;
-      opacity: 0; animation: fadeUp 0.5s 0.48s forwards;
-    }
-    .issue-pill {
-      font-size: 0.8rem; font-weight: 600; color: var(--gray);
-      border: 1.5px solid var(--cream-dk); border-radius: 20px;
-      padding: 0.35rem 0.9rem; letter-spacing: 0.03em;
-      background: white;
     }
 
     /* ── SECTION DIVIDER ───────────────────────────── */
     .section-rule { border: none; border-top: 1px solid var(--cream-dk); margin: 0 2.5rem; }
 
     /* ── PRODUCTS ──────────────────────────────────── */
-    .products { padding: 4rem 2.5rem; max-width: 1100px; margin: 0 auto; }
+    .products { padding: 1.5rem 2.5rem 4rem; max-width: 1100px; margin: 0 auto; }
 
     .products-grid {
       display: grid;
@@ -271,7 +261,7 @@
     @media (max-width: 640px) { nav { height: 68px; } .nav-logo img { height: 44px; } .nav-ext, .nav-divider { display: none; } .nav-link { padding: 0.45rem 0.3rem; font-size: 0.76rem; } .nav-right { gap: 0; } nav { padding-inline: 0.75rem; } .nav-logo img { height: 34px; } html { scroll-padding-top: 84px; } }
     @media (max-width: 860px) {
       nav { padding: 0 1.25rem; }
-      .hero { padding: 110px 1.25rem 3.5rem; }
+      .hero { padding: 110px 1.25rem 1.5rem; }
       .products, .projects { padding-left: 1.25rem; padding-right: 1.25rem; }
       .products-grid { grid-template-columns: 1fr; }
       .cols2, .duo { grid-template-columns: minmax(0, 1fr); }
@@ -311,14 +301,8 @@
 <section class="hero">
   <h1>Building more of what<br>Philadelphia needs to <em>thrive.</em></h1>
   <p class="hero-sub">Housing, transportation, and energy are the three biggest costs in most families' budgets. Build Philly Now covers the policy and the politics of building more of all three.</p>
-  <div class="hero-issues">
-    <span class="issue-pill" style="background:#A5502F;border-color:#A5502F;color:#FFFFFF">Housing</span>
-    <span class="issue-pill" style="background:#3E6F98;border-color:#3E6F98;color:#FFFFFF">Transit</span>
-    <span class="issue-pill" style="background:#7A2B5A;border-color:#7A2B5A;color:#FFFFFF">Energy</span>
-  </div>
 </section>
 
-<hr class="section-rule">
 
 <!-- PRODUCTS -->
 <section class="products">
