@@ -136,7 +136,7 @@
     .projects { padding: 3.5rem 2.5rem 1.5rem; max-width: 1100px; margin: 0 auto; }
     .sec-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 0.75rem 2rem; flex-wrap: wrap; border-top: 5px solid var(--black); padding-top: 1.1rem; margin: 0 0 2rem; }
     .sec-head.gap { margin-top: 4rem; }
-    .sec-head h2 { font-family: 'Brother 1816', 'Arial Black', sans-serif; font-weight: 700; text-transform: uppercase; font-size: clamp(2rem, 4vw, 3rem); line-height: 1; letter-spacing: 0.005em; color: var(--black); margin: 0; }
+    .sec-head h2 { font-family: 'Brother 1816', 'Arial Black', sans-serif; font-weight: 700; text-transform: uppercase; font-size: clamp(1.6rem, 3.1vw, 2.3rem); line-height: 1; letter-spacing: 0.005em; color: var(--black); margin: 0; }
     .sec-head .sub { font-size: 0.92rem; color: var(--gray); max-width: 44ch; line-height: 1.5; }
     .sec-head a { color: var(--green-dark); font-weight: 700; font-size: 0.85rem; text-decoration: none; white-space: nowrap; }
     .sec-head.sm { border-top-width: 4px; margin-bottom: 1rem; }
@@ -202,6 +202,7 @@
     .tool.soon { background: transparent; border: 2px dashed var(--cream-dk); justify-content: center; min-height: 140px; }
     .col-head { border-top: 4px solid var(--black); display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-top: 0.6rem; margin-bottom: 0.6rem; }
     .col-head img { display: block; height: 64px; width: auto; margin-left: -8px; }
+    @media (max-width: 640px) { .col-head img { height: 52px; } .col-head a { font-size: 0.76rem; } }
     .col-head a { font-size: 0.82rem; font-weight: 700; color: var(--green-dark); text-decoration: none; white-space: nowrap; }
     .lunch-when { font-size: 0.9rem; line-height: 1.5; margin-bottom: 0.4rem; }
     .lunch-when b { font-weight: 700; }
@@ -257,7 +258,7 @@
 
     @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 
-    @media (max-width: 640px) { nav { height: 68px; } .nav-logo img { height: 44px; } .nav-ext, .nav-divider { display: none; } .nav-link { padding: 0.45rem 0.6rem; } html { scroll-padding-top: 84px; } }
+    @media (max-width: 640px) { nav { height: 68px; } .nav-logo img { height: 44px; } .nav-ext, .nav-divider { display: none; } .nav-link { padding: 0.45rem 0.3rem; font-size: 0.76rem; } .nav-right { gap: 0; } nav { padding-inline: 0.75rem; } .nav-logo img { height: 34px; } html { scroll-padding-top: 84px; } }
     @media (max-width: 860px) {
       nav { padding: 0 1.25rem; }
       .hero { padding: 110px 1.25rem 3.5rem; }
@@ -287,10 +288,10 @@
   </div>
   <div class="nav-right">
     <a href="https://buildphillynow.substack.com" target="_blank" class="nav-link nav-ext" rel="noopener">News</a>
-    <a href="https://map.buildphillynow.org" target="_blank" class="nav-link nav-ext" rel="noopener">Dashboard</a>
     <div class="nav-divider"></div>
     <a href="#projects" class="nav-link">Research</a>
     <a href="#tools" class="nav-link">Tools</a>
+    <a href="#policy-lunch" class="nav-link">Policy Lunch</a>
     <div class="nav-divider"></div>
     <a href="#about" class="nav-link">About</a>
   </div>
@@ -569,7 +570,7 @@
       <a class="post" href="https://buildphillynow.substack.com/p/bpn-policy-brief-housing-capacity" target="_blank" rel="noopener"><span class="date">Sep 15, 2026</span><b>BPN Policy Brief: Housing Capacity in Center City</b></a>
       <a class="post" href="https://buildphillynow.substack.com/p/two-demolitions-denied-and-a-haring" target="_blank" rel="noopener"><span class="date">Aug 31, 2026</span><b>Two Demolitions Denied, and a Haring Mural on Deck at the Historical Commission</b></a>
     </div>
-    <div>
+    <div id="policy-lunch">
       <div class="col-head"><img src="assets/logo-policy-lunch.svg" alt="BPN Policy Lunch"><a href="https://buildphillynow.substack.com/archive" target="_blank" rel="noopener">All lunches &rarr;</a></div>
       <p class="lunch-when"><b>Fridays, 12&ndash;1:30pm</b> &middot; Econsult Solutions&rsquo; office, 1435 Walnut St.</p>
       <div class="up"><div class="d"><small>Oct</small><span>23</span></div><div><b>Meet the Urbanist Regional Electeds</b><p>Municipal electeds from around the region on housing, transportation, and more: Mayor Joi Washington (Media), Michael Gaudini (Narberth), Craig Timberlake (Lower Merion), Kofi Ossei (Towamencin).</p></div></div>
