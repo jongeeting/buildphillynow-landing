@@ -133,15 +133,14 @@
     .pcard-cta svg { width: 14px; height: 14px; stroke: var(--green-dark); fill: none; stroke-width: 2.5; }
 
     /* ── RESEARCH ──────────────────────────────────── */
-    .projects { padding: 1.5rem 2.5rem 3rem; max-width: 1100px; margin: 0 auto; }
-    .projects-title {
-      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.7rem; font-weight: 700;
-      letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-lt);
-    }
-    .projects-sub { font-size: 0.85rem; color: var(--gray); }
-    .issues-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin: 2.5rem 0 1.25rem; }
-    .eyebrow { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gray); margin: 0 0 0.9rem; display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem; }
-    .eyebrow a { color: var(--green-dark); letter-spacing: 0.02em; text-transform: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.78rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+    .projects { padding: 3.5rem 2.5rem 1.5rem; max-width: 1100px; margin: 0 auto; }
+    .sec-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 0.75rem 2rem; flex-wrap: wrap; border-top: 5px solid var(--black); padding-top: 1.1rem; margin: 0 0 2rem; }
+    .sec-head.gap { margin-top: 4rem; }
+    .sec-head h2 { font-family: 'Brother 1816', 'Arial Black', sans-serif; font-weight: 700; text-transform: uppercase; font-size: clamp(2rem, 4vw, 3rem); line-height: 1; letter-spacing: 0.005em; color: var(--black); margin: 0; }
+    .sec-head .sub { font-size: 0.92rem; color: var(--gray); max-width: 44ch; line-height: 1.5; }
+    .sec-head a { color: var(--green-dark); font-weight: 700; font-size: 0.85rem; text-decoration: none; white-space: nowrap; }
+    .sec-head.sm { border-top-width: 4px; margin-bottom: 1rem; }
+    .sec-head.sm h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); }
     .tag { display: inline-block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 99px; padding: 0.15rem 0.55rem; }
     .tag.n { background: var(--cream); color: var(--gray); }
     .date { font-size: 0.72rem; color: var(--gray); }
@@ -177,7 +176,7 @@
     /* issue sections + editorial list */
     .issue { margin-bottom: 2.25rem; }
     .band { border-radius: 4px; padding: 0.95rem 1.25rem; display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem 1.5rem; flex-wrap: wrap; color: #FFFFFF; margin-bottom: 1.5rem; }
-    .band h3 { font-family: 'Brother 1816', 'Arial Black', sans-serif; font-weight: 700; text-transform: uppercase; font-size: 1.3rem; letter-spacing: 0.01em; margin: 0; }
+    .band h3 { font-family: 'Brother 1816', 'Arial Black', sans-serif; font-weight: 700; text-transform: uppercase; font-size: 1.6rem; letter-spacing: 0.01em; margin: 0; }
     .band p { margin: 0; font-size: 0.84rem; flex: 1 1 260px; }
     .band .cnt { font-weight: 700; font-size: 0.78rem; white-space: nowrap; }
     .list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 1.5rem; }
@@ -222,9 +221,6 @@
       font-weight: 700; color: var(--black); line-height: 1.1; letter-spacing: 0.005em; text-transform: uppercase; margin-bottom: 2rem;
     }
     .about-hed em { color: var(--green); font-style: normal; }
-    .validators { display: flex; flex-direction: column; gap: 0.8rem; }
-    .val { display: flex; gap: 0.65rem; align-items: flex-start; font-size: 0.82rem; color: var(--gray); font-weight: 500; line-height: 1.4; }
-    .val-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; flex-shrink: 0; margin-top: 0.35em; }
     .about-right { }
     .about-right p { font-size: 0.975rem; line-height: 1.8; color: var(--black); margin-bottom: 1.35rem; }
     .about-right p:last-child { margin-bottom: 0; }
@@ -353,8 +349,7 @@
 
 <!-- RESEARCH -->
 <section class="projects" id="projects">
-  <hr class="section-rule" style="margin: 0 0 2.5rem;">
-  <p class="eyebrow"><span>Latest research</span></p>
+  <div class="sec-head"><h2>Latest Research</h2></div>
   <div class="covers">
     <a class="cv" href="https://drive.google.com/file/d/16isOeQvng_6ChnLqgR9TX-6fH816s9ye/view" target="_blank" rel="noopener">
       <div class="cover" style="background:#A5502F">
@@ -399,7 +394,7 @@
     <p>Scenario reports and maps for every council district, released together.</p>
   </div>
 
-  <div class="issues-head"><span class="projects-title">All research &amp; analysis</span><span class="projects-sub">Original data work on housing, transit, and energy in Philadelphia and Pennsylvania.</span></div>
+  <div class="sec-head gap"><h2>All Research &amp; Analysis</h2><span class="sub">Original data work on housing, transit, and energy in Philadelphia and Pennsylvania.</span></div>
   <div class="issue">
     <div class="band" style="background:#A5502F"><h3>Housing</h3><p>Zoning, permitting, the Land Bank, tax policy, and state legislation.</p><span class="cnt">12 reports</span></div>
     <div class="list">
@@ -518,8 +513,8 @@
 </section>
 
 <!-- TOOLS -->
-<section class="projects tools-sec" id="tools" style="padding-top:0">
-  <p class="eyebrow"><span>Tools &amp; trackers</span></p>
+<section class="projects tools-sec" id="tools">
+  <div class="sec-head"><h2>Tools &amp; Trackers</h2></div>
   <div class="tools">
     <a class="ed" href="https://map.buildphillynow.org" target="_blank" rel="noopener" style="--c:#00844D;--ct:#006639">
       <div class="meta"><em>Map</em><span></span></div>
@@ -551,16 +546,16 @@
 </section>
 
 <!-- NEWS + LUNCH -->
-<section class="projects" id="news-lunch" style="padding-top:0">
+<section class="projects" id="news-lunch">
   <div class="cols2">
     <div>
-      <p class="eyebrow"><span>From BPN News</span><a href="https://buildphillynow.substack.com" target="_blank" rel="noopener">Read on Substack &rarr;</a></p>
+      <div class="sec-head sm"><h2>From BPN News</h2><a href="https://buildphillynow.substack.com" target="_blank" rel="noopener">Read on Substack &rarr;</a></div>
       <a class="post" href="https://buildphillynow.substack.com/p/bpn-news-roosevelt-boulevards-safety" target="_blank" rel="noopener"><span class="date">Sep 23, 2026</span><b>Roosevelt Boulevard&rsquo;s Safety Fixes Have a Date. The Subway Still Doesn&rsquo;t</b></a>
       <a class="post" href="https://buildphillynow.substack.com/p/bpn-policy-brief-housing-capacity" target="_blank" rel="noopener"><span class="date">Sep 15, 2026</span><b>BPN Policy Brief: Housing Capacity in Center City</b></a>
       <a class="post" href="https://buildphillynow.substack.com/p/two-demolitions-denied-and-a-haring" target="_blank" rel="noopener"><span class="date">Aug 31, 2026</span><b>Two Demolitions Denied, and a Haring Mural on Deck at the Historical Commission</b></a>
     </div>
     <div>
-      <p class="eyebrow"><span>Policy Lunch</span><a href="https://buildphillynow.substack.com" target="_blank" rel="noopener">All lunches &rarr;</a></p>
+      <div class="sec-head sm"><h2>Policy Lunch</h2><a href="https://buildphillynow.substack.com" target="_blank" rel="noopener">All lunches &rarr;</a></div>
       <a class="post" href="https://buildphillynow.substack.com/p/policy-lunch-925-lauren-smith-and" target="_blank" rel="noopener"><span class="date">Sep 25, 2026</span><b>Lauren Smith and Clint Randall, Center City District Housing Report</b></a>
       <a class="post" href="https://buildphillynow.substack.com/p/policy-lunch-911-madeleine-marr-road" target="_blank" rel="noopener"><span class="date">Sep 11, 2026</span><b>Madeleine Marr, ROAD to Housing</b></a>
       <a class="post" href="https://buildphillynow.substack.com/p/policy-lunch-724-vaughn-ross-on-opportunity" target="_blank" rel="noopener"><span class="date">Jul 24, 2026</span><b>Vaughn Ross on Opportunity Zones 2.0</b></a>
@@ -576,12 +571,7 @@
     <div class="about-left">
       <p class="about-kicker">About BPN</p>
       <h2 class="about-hed">Pro-growth.<br>Pro-worker.<br><em>Pro-Philadelphia.</em></h2>
-      <div class="validators">
-        <div class="val"><div class="val-dot"></div><span>IBEW Local 98 board leadership</span></div>
-        <div class="val"><div class="val-dot"></div><span>Eastern Atlantic States Regional Council of Carpenters</span></div>
-        <div class="val"><div class="val-dot"></div><span>30,000 Homes housing advocacy table</span></div>
-        <div class="val"><div class="val-dot"></div><span>Partners with Parker and Shapiro administrations</span></div>
-      </div>
+      
     </div>
     <div class="about-right">
       <p>Build Philly Now is a Philadelphia economic development think tank dedicated to building more of the things a growing city needs to thrive: housing, transportation, and energy.</p>
