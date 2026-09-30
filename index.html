@@ -202,7 +202,8 @@
     .tool.soon { background: transparent; border: 2px dashed var(--cream-dk); justify-content: center; min-height: 140px; }
     .col-head { border-top: 4px solid var(--black); display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-top: 0.6rem; margin-bottom: 0.6rem; }
     .col-head img { display: block; height: 64px; width: auto; margin-left: -8px; }
-    @media (max-width: 640px) { .col-head img { height: 52px; } .col-head a { font-size: 0.76rem; } }
+    .col-head img[src$=".svg"] { height: 31px; margin-left: 0; }
+    @media (max-width: 640px) { .col-head img { height: 52px; } .col-head img[src$=".svg"] { height: 25px; } .col-head a { font-size: 0.76rem; } }
     .col-head a { font-size: 0.82rem; font-weight: 700; color: var(--green-dark); text-decoration: none; white-space: nowrap; }
     .lunch-when { font-size: 0.9rem; line-height: 1.5; margin-bottom: 0.4rem; }
     .lunch-when b { font-weight: 700; }
