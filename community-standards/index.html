@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" type="image/svg+xml" href="../assets/brand/BPN_Icon_Green.svg">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Community Standards — Build Philly Now</title>
   <meta name="description" content="Community standards for the Build Philly Now subscriber Slack community.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
+    @font-face { font-family: 'Brother 1816'; src: url('../assets/fonts/Brother1816-Bold.otf') format('opentype'); font-weight: 700; font-style: normal; font-display: swap; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --green: #00844D; --green-dark: #006639; --green-light: #E2F2EA;
@@ -18,12 +20,12 @@
     body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--off-white); color: var(--black); }
 
     nav {
-      background: var(--off-white); border-bottom: 1px solid var(--cream-dark);
-      padding: 0 3rem; height: 68px; display: flex; align-items: center; justify-content: space-between;
+      background: var(--green);
+      padding: 0 3rem; height: 88px; display: flex; align-items: center; justify-content: space-between;
     }
-    .nav-logo img { height: 34px; width: auto; }
-    .nav-back { font-size: 0.85rem; font-weight: 500; color: var(--gray); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; transition: color 0.18s; }
-    .nav-back:hover { color: var(--green); }
+    .nav-logo img { height: 60px; width: auto; display: block; }
+    .nav-back { font-size: 0.88rem; font-weight: 600; color: #FFFFFF; text-decoration: none; display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.9rem; border-radius: 4px; transition: background 0.18s; }
+    .nav-back:hover { background: rgba(255,255,255,0.16); }
 
     .page {
       max-width: 720px; margin: 0 auto;
@@ -32,14 +34,14 @@
 
     .page-eyebrow {
       display: flex; align-items: center; gap: 0.75rem;
-      font-family: 'Unbounded', sans-serif; font-size: 0.6rem; font-weight: 600;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.6rem; font-weight: 600;
       letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 1rem;
     }
     .page-eyebrow::before { content: ''; display: block; width: 1.5rem; height: 2px; background: var(--green); }
 
     h1 {
-      font-family: 'Unbounded', sans-serif; font-size: clamp(1.8rem, 3vw, 2.6rem);
-      font-weight: 900; color: var(--black); line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 0.75rem;
+      font-family: 'Brother 1816', 'Arial Black', sans-serif; font-size: clamp(2rem, 3.6vw, 3rem);
+      font-weight: 700; color: var(--black); line-height: 1.05; letter-spacing: 0.005em; text-transform: uppercase; margin-bottom: 0.75rem;
     }
 
     .page-meta { font-size: 0.85rem; color: var(--gray); margin-bottom: 3rem; }
@@ -49,7 +51,7 @@
     .intro { font-size: 1rem; line-height: 1.75; color: var(--black); margin-bottom: 2rem; }
 
     h2 {
-      font-family: 'Unbounded', sans-serif; font-size: 1rem; font-weight: 700;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700;
       color: var(--green); letter-spacing: -0.01em; margin-bottom: 0.85rem; margin-top: 2.5rem;
     }
 
@@ -86,13 +88,13 @@
     .footer-home { font-size: 0.8rem; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.18s; }
     .footer-home:hover { color: rgba(255,255,255,0.7); }
 
-    @media (max-width: 600px) { nav { padding: 0 1.25rem; } .page { padding: 3rem 1.25rem 4rem; } footer { padding: 1.75rem 1.25rem; } }
+    @media (max-width: 600px) { nav { padding: 0 1.25rem; height: 68px; } .nav-logo img { height: 44px; } .page { padding: 3rem 1.25rem 4rem; } footer { padding: 1.75rem 1.25rem; } }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="/" class="nav-logo"><img src="../assets/logo-icon.png" alt="Build Philly Now"></a>
+    <a href="/" class="nav-logo"><img src="../assets/brand/BPN_Logo_White.svg" alt="Build Philly Now"></a>
     <a href="/" class="nav-back">← Back to buildphillynow.org</a>
   </nav>
 
@@ -184,7 +186,7 @@
   </main>
 
   <footer>
-    <a href="/" class="footer-logo"><img src="../assets/logo-icon.png" alt="Build Philly Now"></a>
+    <a href="/" class="footer-logo"><img src="../assets/brand/BPN_Icon_White.svg" alt="Build Philly Now"></a>
     <a href="/" class="footer-home">← buildphillynow.org</a>
     <span class="footer-copy">© 2025 Build Philly Now</span>
   </footer>
