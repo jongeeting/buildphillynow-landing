@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Build Philly Now</title>
   <meta name="description" content="Build Philly Now is a Philadelphia economic development think tank dedicated to building more housing, transportation, and energy.">
+  <link rel="preload" href="assets/fonts/Brother1816-Bold.otf" as="font" type="font/otf" crossorigin>
   <link rel="icon" type="image/svg+xml" href="assets/brand/BPN_Icon_Green.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    @font-face { font-family: 'Brother 1816'; src: url('assets/fonts/Brother1816-Bold.otf') format('opentype'); font-weight: 700; font-style: normal; font-display: swap; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --green:      #00844D;
@@ -50,7 +52,7 @@
     /* ── HERO ──────────────────────────────────────── */
     .hero {
       padding: 120px 2.5rem 5rem;
-      max-width: 860px;
+      max-width: 980px;
       margin: 0 auto;
     }
     .hero-tag {
@@ -64,9 +66,9 @@
     }
     .hero-tag::before { content: ''; width: 6px; height: 6px; background: var(--green); border-radius: 50%; }
     h1 {
-      font-family: 'Unbounded', sans-serif;
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      font-weight: 900; line-height: 1.1; letter-spacing: -0.025em;
+      font-family: 'Brother 1816', 'Arial Black', sans-serif;
+      font-size: clamp(1.9rem, 3.9vw, 2.9rem);
+      font-weight: 700; line-height: 1.05; letter-spacing: 0.005em; text-transform: uppercase; text-wrap: balance;
       color: var(--black); margin-bottom: 1.5rem;
       opacity: 0; animation: fadeUp 0.55s 0.22s forwards;
     }
@@ -123,7 +125,7 @@
     /* News mockup */
     .news-mock { padding: 1.5rem; width: 100%; }
     .news-mock-headline {
-      font-family: 'Unbounded', sans-serif; font-size: 0.75rem; font-weight: 800;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.75rem; font-weight: 800;
       color: var(--black); line-height: 1.3; margin-bottom: 0.75rem;
       letter-spacing: -0.01em;
     }
@@ -144,19 +146,19 @@
     /* ── RESEARCH ──────────────────────────────────── */
     .projects { padding: 1.5rem 2.5rem 3rem; max-width: 1100px; margin: 0 auto; }
     .projects-title {
-      font-family: 'Unbounded', sans-serif; font-size: 0.7rem; font-weight: 700;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.7rem; font-weight: 700;
       letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-lt);
     }
     .projects-sub { font-size: 0.85rem; color: var(--gray); }
     .issues-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin: 2.5rem 0 1.25rem; }
-    .eyebrow { font-family: 'Unbounded', sans-serif; font-weight: 600; font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gray); margin: 0 0 0.9rem; display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem; }
+    .eyebrow { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gray); margin: 0 0 0.9rem; display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem; }
     .eyebrow a { color: var(--green); letter-spacing: 0.02em; text-transform: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.78rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
     .tag { display: inline-block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 99px; padding: 0.15rem 0.55rem; }
     .tag.n { background: var(--cream); color: var(--gray); }
     .date { font-size: 0.72rem; color: var(--gray); }
     .cta { font-size: 0.78rem; font-weight: 700; color: var(--green); display: flex; align-items: center; gap: 0.3rem; }
     .cta svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2.5; }
-    .ttl { font-family: 'Unbounded', sans-serif; font-weight: 700; line-height: 1.3; letter-spacing: -0.01em; }
+    .ttl { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; line-height: 1.3; letter-spacing: -0.01em; }
 
     /* latest release: covers */
     .covers { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem 1.25rem; }
@@ -164,11 +166,15 @@
     .cover { position: relative; aspect-ratio: 4 / 5; overflow: hidden; color: #FFFFFF; padding: 1.35rem 1.3rem 1.25rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 3px; transition: transform 0.2s, box-shadow 0.2s; background-image: linear-gradient(180deg, rgba(255,255,255,0) 45%, rgba(0,0,0,0.22) 100%); }
     .cover::before { content: ''; position: absolute; inset: 0.55rem; border: 1px solid rgba(255,255,255,0.32); border-radius: 2px; pointer-events: none; }
     .cv:hover .cover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.18); }
-    .cover .top { position: relative; display: flex; justify-content: space-between; gap: 0.5rem; align-items: baseline; font-family: 'Unbounded', sans-serif; font-weight: 600; font-size: 0.52rem; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1.5; }
-    .cover .top b { font-weight: 800; font-size: 0.8rem; letter-spacing: -0.02em; }
+    .cover .top { position: relative; display: flex; justify-content: space-between; gap: 0.75rem; align-items: flex-start; }
+    .cover .cv-logo { display: block; height: 2.6rem; width: auto; }
+    .cover .kick { display: flex; flex-direction: column; align-items: flex-end; gap: 0.15rem; padding-top: 0.1rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap; }
+    .cover .kick span { opacity: 0.9; font-weight: 600; }
+    .cover .kick i { display: none; }
+    .cover .kick b { font-family: 'Brother 1816', 'Arial Black', sans-serif; font-weight: 700; font-size: 1.3rem; letter-spacing: 0.04em; line-height: 1; }
     .cover .bot { position: relative; display: flex; flex-direction: column; gap: 0.7rem; }
     .cover .rule { display: block; width: 2.4rem; height: 3px; background: #FFFFFF; }
-    .cover h3 { font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(0.8rem, 1.45vw, 1rem); line-height: 1.2; letter-spacing: -0.005em; margin: 0; text-transform: uppercase; text-wrap: balance; }
+    .cover h3 { font-family: 'Brother 1816', 'Arial Black', sans-serif; font-weight: 700; font-size: clamp(0.95rem, 1.6vw, 1.15rem); line-height: 1.12; letter-spacing: 0.005em; margin: 0; text-transform: uppercase; text-wrap: balance; }
     .cover .date { font-size: 0.7rem; opacity: 0.92; font-weight: 500; color: #FFFFFF; }
     .cv p { margin: 0; color: var(--gray); font-size: 0.83rem; line-height: 1.55; flex: 1; }
     .soon-wide { margin-top: 1.75rem; border: 2px dashed var(--cream-dk); border-radius: 6px; padding: 1.1rem 1.4rem; display: grid; gap: 0.35rem; }
@@ -179,7 +185,7 @@
     /* issue sections + editorial list */
     .issue { margin-bottom: 2.25rem; }
     .band { border-radius: 4px; padding: 0.95rem 1.25rem; display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem 1.5rem; flex-wrap: wrap; color: #FFFFFF; margin-bottom: 1.5rem; }
-    .band h3 { font-family: 'Unbounded', sans-serif; font-weight: 800; text-transform: uppercase; font-size: 1.1rem; margin: 0; }
+    .band h3 { font-family: 'Brother 1816', 'Arial Black', sans-serif; font-weight: 700; text-transform: uppercase; font-size: 1.3rem; letter-spacing: 0.01em; margin: 0; }
     .band p { margin: 0; font-size: 0.84rem; flex: 1 1 260px; }
     .band .cnt { font-weight: 700; font-size: 0.78rem; white-space: nowrap; }
     .list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 1.5rem; }
@@ -189,11 +195,11 @@
     .ed { display: flex; flex-direction: column; gap: 0.55rem; min-width: 0; border-top: 4px solid var(--c); padding-top: 0.75rem; text-decoration: none; color: inherit; }
     .ed .meta { display: flex; justify-content: space-between; gap: 0.5rem; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--gray); }
     .ed .meta em { font-style: normal; color: var(--ct); }
-    .ed h3 { font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 0.98rem; line-height: 1.25; letter-spacing: -0.01em; margin: 0.15rem 0 0; text-wrap: balance; }
+    .ed h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.02rem; line-height: 1.25; letter-spacing: -0.01em; margin: 0.15rem 0 0; text-wrap: balance; }
     .ed:hover h3 { color: var(--ct); }
     .ed p { margin: 0; color: var(--gray); font-size: 0.85rem; line-height: 1.55; flex: 1; }
     .ed .num { display: flex; align-items: baseline; gap: 0.6rem; padding-block: 0.55rem; margin-block: 0.2rem; border-block: 1px solid var(--cream-dk); }
-    .ed .num b { font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 1.3rem; color: var(--ct); letter-spacing: -0.02em; white-space: nowrap; }
+    .ed .num b { font-family: 'Brother 1816', 'Arial Black', sans-serif; font-weight: 700; font-size: 1.5rem; color: var(--ct); letter-spacing: -0.02em; white-space: nowrap; }
     .ed .num span { font-size: 0.74rem; color: var(--gray); line-height: 1.3; }
     .ed.soon { border-top-style: dashed; opacity: 0.85; }
     .ed.soon h3 { font-size: 0.9rem; }
@@ -217,14 +223,14 @@
     .about-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: start; }
     .about-left { position: sticky; top: 86px; }
     .about-kicker {
-      font-family: 'Unbounded', sans-serif; font-size: 0.6rem; font-weight: 700;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.6rem; font-weight: 700;
       letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); margin-bottom: 1rem;
       display: flex; align-items: center; gap: 0.6rem;
     }
     .about-kicker::before { content: ''; width: 1.25rem; height: 2px; background: var(--green); }
     .about-hed {
-      font-family: 'Unbounded', sans-serif; font-size: clamp(1.3rem, 1.8vw, 1.9rem);
-      font-weight: 800; color: var(--black); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 2rem;
+      font-family: 'Brother 1816', 'Arial Black', sans-serif; font-size: clamp(1.5rem, 2.1vw, 2.2rem);
+      font-weight: 700; color: var(--black); line-height: 1.1; letter-spacing: 0.005em; text-transform: uppercase; margin-bottom: 2rem;
     }
     .about-hed em { color: var(--green); font-style: normal; }
     .validators { display: flex; flex-direction: column; gap: 0.8rem; }
@@ -235,14 +241,14 @@
     .about-right p:last-child { margin-bottom: 0; }
     .about-right strong { color: var(--green); font-weight: 600; }
     .produces { margin-top: 2.25rem; padding-top: 2.25rem; border-top: 1px solid var(--cream-dk); }
-    .produces-label { font-family: 'Unbounded', sans-serif; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); margin-bottom: 1.1rem; }
+    .produces-label { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); margin-bottom: 1.1rem; }
     .produces-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
     .produces-list li { font-size: 0.92rem; line-height: 1.6; color: var(--black); padding-left: 1.2rem; position: relative; }
     .produces-list li::before { content: ''; position: absolute; left: 0; top: 0.7em; width: 0.45rem; height: 1.5px; background: var(--green); }
 
     /* ── COALITION ─────────────────────────────────── */
     .coalition { background: var(--black); padding: 3rem 2.5rem; display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; }
-    .coa-label { font-family: 'Unbounded', sans-serif; font-size: 0.58rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.25); white-space: nowrap; flex-shrink: 0; }
+    .coa-label { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.58rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.25); white-space: nowrap; flex-shrink: 0; }
     .coa-members { display: flex; gap: 1.75rem; flex-wrap: wrap; }
     .coa-member { font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.45); letter-spacing: 0.03em; }
 
@@ -369,7 +375,7 @@
   <div class="covers">
     <a class="cv" href="https://drive.google.com/file/d/16isOeQvng_6ChnLqgR9TX-6fH816s9ye/view" target="_blank" rel="noopener">
       <div class="cover" style="background:#A5502F">
-        <div class="top"><span>Housing &middot; Report</span><b>BPN</b></div>
+        <div class="top"><img class="cv-logo" src="assets/brand/BPN_Icon_White.svg" alt="BPN"><span class="kick"><span>Research</span><i></i><b>Housing</b></span></div>
         <div class="bot"><span class="rule"></span><h3>Housing Capacity in Center City</h3><span class="date">Sep 2026</span></div>
       </div>
       <p>About 79 million sq ft of unused zoned capacity in Greater Center City’s high-rise districts, 66.5 million of it in the Core.</p>
@@ -377,7 +383,7 @@
     </a>
     <a class="cv" href="https://phillyhousingproductionfund.netlify.app/" target="_blank" rel="noopener">
       <div class="cover" style="background:#A5502F">
-        <div class="top"><span>Housing &middot; Report</span><b>BPN</b></div>
+        <div class="top"><img class="cv-logo" src="assets/brand/BPN_Icon_White.svg" alt="BPN"><span class="kick"><span>Research</span><i></i><b>Housing</b></span></div>
         <div class="bot"><span class="rule"></span><h3>Philadelphia Housing Production Fund</h3><span class="date">Aug 2026</span></div>
       </div>
       <p>A revolving construction loan fund to unlock permitted, shovel-ready homes that can’t get built &mdash; without new federal dollars.</p>
@@ -385,7 +391,7 @@
     </a>
     <a class="cv" href="https://pa-oz-rankings.netlify.app/" target="_blank" rel="noopener">
       <div class="cover" style="background:#A5502F">
-        <div class="top"><span>Housing &middot; Report</span><b>BPN</b></div>
+        <div class="top"><img class="cv-logo" src="assets/brand/BPN_Icon_White.svg" alt="BPN"><span class="kick"><span>Research</span><i></i><b>Housing</b></span></div>
         <div class="bot"><span class="rule"></span><h3>Pennsylvania Opportunity Zones 2027</h3><span class="date">May 2026</span></div>
       </div>
       <p>Where should Pennsylvania put its next Opportunity Zones? A statewide ranking ahead of the 2027 designations.</p>
@@ -393,7 +399,7 @@
     </a>
     <a class="cv" href="https://bpn-oz-analysis.netlify.app/" target="_blank" rel="noopener">
       <div class="cover" style="background:#A5502F">
-        <div class="top"><span>Housing &middot; Report</span><b>BPN</b></div>
+        <div class="top"><img class="cv-logo" src="assets/brand/BPN_Icon_White.svg" alt="BPN"><span class="kick"><span>Research</span><i></i><b>Housing</b></span></div>
         <div class="bot"><span class="rule"></span><h3>Philadelphia Opportunity Zones, Ranked for the Next Round</h3><span class="date">Apr 2026</span></div>
       </div>
       <p>Ranking Philadelphia’s eligible census tracts by transit access, regional jobs access, and recent permit and business activity.</p>
