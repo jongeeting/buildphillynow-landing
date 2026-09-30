@@ -112,7 +112,10 @@
       display: flex; flex-direction: column; gap: 1.25rem;
     }
     .pcard-logo { display: block; }
-    .pcard-logo svg { display: block; height: 36px; width: auto; }
+    .wordmark { display: flex; align-items: center; gap: 0.7rem; color: var(--green); font-family: 'Unbounded', sans-serif; text-transform: uppercase; line-height: 1; }
+    .wm-bpn { font-weight: 900; font-size: 1.85rem; letter-spacing: -0.03em; }
+    .wm-name { font-weight: 900; font-size: 1.85rem; letter-spacing: -0.03em; }
+    .wm-stack { font-weight: 700; font-size: 0.74rem; line-height: 1.2; letter-spacing: 0.01em; }
     .pcard-desc { font-size: 0.9rem; line-height: 1.65; color: var(--gray); }
 
     .pcard-preview { position: relative; overflow: hidden; height: 200px; }
@@ -312,20 +315,8 @@
     <!-- BPN News -->
     <a href="https://buildphillynow.substack.com" target="_blank" class="pcard">
       <div class="pcard-top">
-        <!-- BPN NEWS Option 1 logo — SVG recreation of bracket mark + BPN NEWS inline -->
         <div class="pcard-logo">
-          <svg viewBox="0 0 220 52" fill="none" xmlns="http://www.w3.org/2000/svg" height="36">
-            <!-- Bracket mark -->
-            <rect x="0" y="0" width="9" height="44" rx="2" fill="#00844D"/>
-            <rect x="0" y="35" width="38" height="9" rx="2" fill="#00844D"/>
-            <rect x="29" y="35" width="9" height="9" rx="2" fill="#00844D"/>
-            <!-- inner curve suggestion -->
-            <path d="M9 35 Q9 44 18 44" stroke="#00844D" stroke-width="0" fill="none"/>
-            <!-- BPN text -->
-            <text x="22" y="34" font-family="'Unbounded', sans-serif" font-weight="900" font-size="30" fill="#00844D" letter-spacing="-0.5">BPN</text>
-            <!-- NEWS text -->
-            <text x="100" y="34" font-family="'Unbounded', sans-serif" font-weight="900" font-size="30" fill="#00844D" letter-spacing="-0.5">NEWS</text>
-          </svg>
+          <div class="wordmark"><span class="wm-bpn">BPN</span><span class="wm-name">NEWS</span></div>
         </div>
         <p class="pcard-desc">Original reporting on Philadelphia housing, development, and infrastructure. Land Bank, Historical Commission, Planning Commission, SEPTA, and more — covered by reporters who understand the policy.</p>
       </div>
@@ -348,19 +339,8 @@
     <!-- BPN Property Intelligence -->
     <a href="https://map.buildphillynow.org" target="_blank" class="pcard">
       <div class="pcard-top">
-        <!-- BPN PROPERTY INTELLIGENCE Option 2 logo -->
         <div class="pcard-logo">
-          <svg viewBox="0 0 340 52" fill="none" xmlns="http://www.w3.org/2000/svg" height="36">
-            <!-- Bracket mark -->
-            <rect x="0" y="0" width="9" height="44" rx="2" fill="#00844D"/>
-            <rect x="0" y="35" width="38" height="9" rx="2" fill="#00844D"/>
-            <rect x="29" y="35" width="9" height="9" rx="2" fill="#00844D"/>
-            <!-- BPN -->
-            <text x="22" y="34" font-family="'Unbounded', sans-serif" font-weight="900" font-size="30" fill="#00844D" letter-spacing="-0.5">BPN</text>
-            <!-- PROPERTY INTELLIGENCE stacked smaller -->
-            <text x="102" y="21" font-family="'Unbounded', sans-serif" font-weight="700" font-size="14.5" fill="#00844D" letter-spacing="0.01em">PROPERTY</text>
-            <text x="102" y="38" font-family="'Unbounded', sans-serif" font-weight="700" font-size="14.5" fill="#00844D" letter-spacing="0.01em">INTELLIGENCE</text>
-          </svg>
+          <div class="wordmark"><span class="wm-bpn">BPN</span><span class="wm-stack">Property<br>Intelligence</span></div>
         </div>
         <p class="pcard-desc">The parcel data dashboard putting the planning intelligence usually reserved for insiders in the hands of everyone who needs it. 577,000+ Philadelphia parcels, updated regularly.</p>
       </div>
