@@ -200,6 +200,21 @@
     /* tools, news */
     .tools { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
     .tool.soon { background: transparent; border: 2px dashed var(--cream-dk); justify-content: center; min-height: 140px; }
+    .col-head { border-top: 4px solid var(--black); display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-top: 0.6rem; margin-bottom: 0.6rem; }
+    .col-head img { display: block; height: 64px; width: auto; margin-left: -8px; }
+    .col-head a { font-size: 0.82rem; font-weight: 700; color: var(--green-dark); text-decoration: none; white-space: nowrap; }
+    .lunch-when { font-size: 0.9rem; line-height: 1.5; margin-bottom: 0.4rem; }
+    .lunch-when b { font-weight: 700; }
+    .up { padding-block: 0.75rem; border-bottom: 1px solid var(--cream-dk); display: grid; grid-template-columns: 4.2rem 1fr; gap: 0.25rem 0.9rem; }
+    .up .d { font-family: 'Brother 1816', 'Arial Black', sans-serif; text-transform: uppercase; line-height: 1; color: var(--green-dark); }
+    .up .d small { display: block; font-size: 0.8rem; letter-spacing: 0.04em; } .up .d span { font-size: 1.9rem; }
+    .up b { font-size: 0.92rem; line-height: 1.35; display: block; }
+    .up p { font-size: 0.82rem; line-height: 1.45; color: var(--gray-lt); margin-top: 0.15rem; }
+    .lunch-cta { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0 0.4rem; }
+    .btn { display: inline-block; font-size: 0.85rem; font-weight: 700; text-decoration: none; padding: 0.65rem 1.05rem; border-radius: 4px; background: var(--green-dark); color: #fff; border: 2px solid var(--green-dark); }
+    .btn.alt { background: transparent; color: var(--green-dark); }
+    .btn:hover { filter: brightness(1.12); }
+    .past-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-lt); margin: 1.4rem 0 0.1rem; }
     .cols2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; margin-bottom: 2rem; }
     .post { padding-block: 0.7rem; border-bottom: 1px solid var(--cream-dk); display: grid; gap: 0.15rem; text-decoration: none; color: inherit; }
     .post:last-child { border-bottom: 0; }
@@ -549,13 +564,19 @@
 <section class="projects" id="news-lunch">
   <div class="cols2">
     <div>
-      <div class="sec-head sm"><h2>From BPN News</h2><a href="https://buildphillynow.substack.com" target="_blank" rel="noopener">Read on Substack &rarr;</a></div>
+      <div class="col-head"><img src="assets/logo-news.png" alt="BPN News"><a href="https://buildphillynow.substack.com" target="_blank" rel="noopener">Read on Substack &rarr;</a></div>
       <a class="post" href="https://buildphillynow.substack.com/p/bpn-news-roosevelt-boulevards-safety" target="_blank" rel="noopener"><span class="date">Sep 23, 2026</span><b>Roosevelt Boulevard&rsquo;s Safety Fixes Have a Date. The Subway Still Doesn&rsquo;t</b></a>
       <a class="post" href="https://buildphillynow.substack.com/p/bpn-policy-brief-housing-capacity" target="_blank" rel="noopener"><span class="date">Sep 15, 2026</span><b>BPN Policy Brief: Housing Capacity in Center City</b></a>
       <a class="post" href="https://buildphillynow.substack.com/p/two-demolitions-denied-and-a-haring" target="_blank" rel="noopener"><span class="date">Aug 31, 2026</span><b>Two Demolitions Denied, and a Haring Mural on Deck at the Historical Commission</b></a>
     </div>
     <div>
-      <div class="sec-head sm"><h2>Policy Lunch</h2><a href="https://buildphillynow.substack.com" target="_blank" rel="noopener">All lunches &rarr;</a></div>
+      <div class="col-head"><img src="assets/logo-policy-lunch.svg" alt="BPN Policy Lunch"><a href="https://buildphillynow.substack.com/archive" target="_blank" rel="noopener">All lunches &rarr;</a></div>
+      <p class="lunch-when"><b>Fridays, 12&ndash;1:30pm</b> &middot; Econsult Solutions&rsquo; office, 1435 Walnut St.</p>
+      <div class="up"><div class="d"><small>Oct</small><span>23</span></div><div><b>Meet the Urbanist Regional Electeds</b><p>Municipal electeds from around the region on housing, transportation, and more: Mayor Joi Washington (Media), Michael Gaudini (Narberth), Craig Timberlake (Lower Merion), Kofi Ossei (Towamencin).</p></div></div>
+      <div class="up"><div class="d"><small>Oct</small><span>30</span></div><div><b>Ryan Judge, SEPTA</b><p>Reimagining Regional Rail</p></div></div>
+      <div class="up"><div class="d"><small>Nov</small><span>6</span></div><div><b>Brian Murray, Shift Capital</b><p>Redevelopment initiatives around North Philadelphia&rsquo;s Amtrak station</p></div></div>
+      <div class="lunch-cta"><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd87lfZ4GEhpO-gy3oRnTJ1yXQiAV_A8zZGwn7mtWv80oIMIg/viewform" target="_blank" rel="noopener">RSVP for a lunch</a><a class="btn alt" href="https://buildphillynow.substack.com/subscribe" target="_blank" rel="noopener">Get Policy Lunch emails</a></div>
+      <p class="past-label">Recent lunches</p>
       <a class="post" href="https://buildphillynow.substack.com/p/policy-lunch-925-lauren-smith-and" target="_blank" rel="noopener"><span class="date">Sep 25, 2026</span><b>Lauren Smith and Clint Randall, Center City District Housing Report</b></a>
       <a class="post" href="https://buildphillynow.substack.com/p/policy-lunch-911-madeleine-marr-road" target="_blank" rel="noopener"><span class="date">Sep 11, 2026</span><b>Madeleine Marr, ROAD to Housing</b></a>
       <a class="post" href="https://buildphillynow.substack.com/p/policy-lunch-724-vaughn-ross-on-opportunity" target="_blank" rel="noopener"><span class="date">Jul 24, 2026</span><b>Vaughn Ross on Opportunity Zones 2.0</b></a>
