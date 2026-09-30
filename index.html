@@ -21,7 +21,7 @@
       --cream-dk:   #D0CCC8;
       --black:      #0D1810;
       --gray:       #4A5E52;
-      --gray-lt:    #8A9E93;
+      --gray-lt:    #586C62;
       --white:      #FFFFFF;
       --off-white:  #EAE7E4;
     }
@@ -59,7 +59,7 @@
       display: inline-flex; align-items: center; gap: 0.6rem;
       background: var(--green-pale); border: 1px solid rgba(0,132,77,0.2);
       border-radius: 20px; padding: 0.35rem 0.9rem;
-      font-size: 0.75rem; font-weight: 600; color: var(--green);
+      font-size: 0.75rem; font-weight: 600; color: var(--green-dark);
       letter-spacing: 0.06em; text-transform: uppercase;
       margin-bottom: 2rem;
       opacity: 0; animation: fadeUp 0.5s 0.1s forwards;
@@ -138,10 +138,10 @@
       display: flex; align-items: center; justify-content: space-between;
     }
     .pcard-cta {
-      font-size: 0.82rem; font-weight: 700; color: var(--green);
+      font-size: 0.82rem; font-weight: 700; color: var(--green-dark);
       display: flex; align-items: center; gap: 0.3rem;
     }
-    .pcard-cta svg { width: 14px; height: 14px; stroke: var(--green); fill: none; stroke-width: 2.5; }
+    .pcard-cta svg { width: 14px; height: 14px; stroke: var(--green-dark); fill: none; stroke-width: 2.5; }
 
     /* ── RESEARCH ──────────────────────────────────── */
     .projects { padding: 1.5rem 2.5rem 3rem; max-width: 1100px; margin: 0 auto; }
@@ -152,29 +152,29 @@
     .projects-sub { font-size: 0.85rem; color: var(--gray); }
     .issues-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin: 2.5rem 0 1.25rem; }
     .eyebrow { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gray); margin: 0 0 0.9rem; display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem; }
-    .eyebrow a { color: var(--green); letter-spacing: 0.02em; text-transform: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.78rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+    .eyebrow a { color: var(--green-dark); letter-spacing: 0.02em; text-transform: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.78rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
     .tag { display: inline-block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 99px; padding: 0.15rem 0.55rem; }
     .tag.n { background: var(--cream); color: var(--gray); }
     .date { font-size: 0.72rem; color: var(--gray); }
-    .cta { font-size: 0.78rem; font-weight: 700; color: var(--green); display: flex; align-items: center; gap: 0.3rem; }
+    .cta { font-size: 0.78rem; font-weight: 700; color: var(--green-dark); display: flex; align-items: center; gap: 0.3rem; }
     .cta svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2.5; }
     .ttl { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; line-height: 1.3; letter-spacing: -0.01em; }
 
     /* latest release: covers */
     .covers { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem 1.25rem; }
     .cv { display: flex; flex-direction: column; gap: 0.75rem; min-width: 0; text-decoration: none; color: inherit; }
-    .cover { position: relative; aspect-ratio: 4 / 5; overflow: hidden; color: #FFFFFF; padding: 1.35rem 1.3rem 1.25rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 3px; transition: transform 0.2s, box-shadow 0.2s; background-image: linear-gradient(180deg, rgba(255,255,255,0) 45%, rgba(0,0,0,0.22) 100%); }
-    .cover::before { content: ''; position: absolute; inset: 0.55rem; border: 1px solid rgba(255,255,255,0.32); border-radius: 2px; pointer-events: none; }
+    .cover { position: relative; aspect-ratio: 4 / 5; overflow: hidden; color: #FFFFFF; padding: 1.05rem 1rem 1rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 3px; transition: transform 0.2s, box-shadow 0.2s; background-image: linear-gradient(180deg, rgba(255,255,255,0) 45%, rgba(0,0,0,0.22) 100%); }
+    .cover::before { content: ''; position: absolute; inset: 0.4rem; border: 1px solid rgba(255,255,255,0.32); border-radius: 2px; pointer-events: none; }
     .cv:hover .cover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.18); }
     .cover .top { position: relative; display: flex; justify-content: space-between; gap: 0.75rem; align-items: flex-start; }
     .cv-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; pointer-events: none; }
     .cover::before { z-index: 1; }
     .cover .top, .cover .bot { z-index: 2; }
-    .cover .cv-logo { display: block; height: 2.6rem; width: auto; }
+    .cover .cv-logo { display: block; height: 2.15rem; width: auto; }
     .cover .kick { display: flex; flex-direction: column; align-items: flex-end; gap: 0.15rem; padding-top: 0.1rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap; }
     .cover .kick span { opacity: 0.9; font-weight: 600; }
     .cover .kick i { display: none; }
-    .cover .kick b { font-family: 'Brother 1816', 'Arial Black', sans-serif; font-weight: 700; font-size: 1.3rem; letter-spacing: 0.04em; line-height: 1; }
+    .cover .kick b { font-family: 'Brother 1816', 'Arial Black', sans-serif; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.06em; line-height: 1; }
     .cover .bot { position: relative; display: flex; flex-direction: column; gap: 0.7rem; }
     .cover .rule { display: block; width: 2.4rem; height: 3px; background: #FFFFFF; }
     .cover h3 { font-family: 'Brother 1816', 'Arial Black', sans-serif; font-weight: 700; font-size: clamp(0.95rem, 1.6vw, 1.15rem); line-height: 1.12; letter-spacing: 0.005em; margin: 0; text-transform: uppercase; text-wrap: balance; }
@@ -216,7 +216,7 @@
     .post { padding-block: 0.7rem; border-bottom: 1px solid var(--cream-dk); display: grid; gap: 0.15rem; text-decoration: none; color: inherit; }
     .post:last-child { border-bottom: 0; }
     .post b { font-size: 0.88rem; line-height: 1.4; }
-    .post:hover b { color: var(--green); }
+    .post:hover b { color: var(--green-dark); }
     .guide { display: flex; gap: 0.75rem 1.75rem; align-items: center; flex-wrap: wrap; background: #6BAF8D; color: #0D1810; border-radius: 10px; padding: 1.1rem 1.4rem; text-decoration: none; }
     .guide p { margin: 0; flex: 1 1 280px; font-size: 0.86rem; line-height: 1.55; }
     .guide .gtag { background: #0D1810; color: #FFFFFF; }
@@ -253,20 +253,21 @@
 
     /* ── COALITION ─────────────────────────────────── */
     .coalition { background: var(--black); padding: 3rem 2.5rem; display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; }
-    .coa-label { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.58rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.25); white-space: nowrap; flex-shrink: 0; }
+    .coa-label { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.58rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.55); white-space: nowrap; flex-shrink: 0; }
     .coa-members { display: flex; gap: 1.75rem; flex-wrap: wrap; }
-    .coa-member { font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.45); letter-spacing: 0.03em; }
+    .coa-member { font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.75); letter-spacing: 0.03em; }
 
     /* ── FOOTER ────────────────────────────────────── */
     footer { background: var(--black); padding: 2.5rem 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; border-top: 1px solid rgba(255,255,255,0.07); }
     .footer-logo img { height: 26px; opacity: 0.75; }
     .footer-links { display: flex; gap: 1.75rem; list-style: none; flex-wrap: wrap; }
-    .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.18s; }
-    .footer-links a:hover { color: rgba(255,255,255,0.7); }
-    .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.18); }
+    .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.62); text-decoration: none; transition: color 0.18s; }
+    .footer-links a:hover { color: #FFFFFF; }
+    .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.5); }
 
     @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 
+    @media (max-width: 640px) { .nav-ext, .nav-divider { display: none; } .nav-link { padding: 0.45rem 0.6rem; } }
     @media (max-width: 860px) {
       nav { padding: 0 1.25rem; }
       .hero { padding: 100px 1.25rem 3.5rem; }
@@ -296,8 +297,8 @@
     </a>
   </div>
   <div class="nav-right">
-    <a href="https://buildphillynow.substack.com" target="_blank" class="nav-link">News</a>
-    <a href="https://map.buildphillynow.org" target="_blank" class="nav-link">Dashboard</a>
+    <a href="https://buildphillynow.substack.com" target="_blank" class="nav-link nav-ext" rel="noopener">News</a>
+    <a href="https://map.buildphillynow.org" target="_blank" class="nav-link nav-ext" rel="noopener">Dashboard</a>
     <div class="nav-divider"></div>
     <a href="#projects" class="nav-link">Research</a>
     <a href="#tools" class="nav-link">Tools</a>
@@ -325,7 +326,7 @@
   <div class="products-grid">
 
     <!-- BPN News -->
-    <a href="https://buildphillynow.substack.com" target="_blank" class="pcard">
+    <a href="https://buildphillynow.substack.com" target="_blank" class="pcard" rel="noopener">
       <div class="pcard-top">
         <div class="pcard-logo">
           <img class="pi-logo" src="assets/logo-news.png" alt="BPN News">
@@ -349,7 +350,7 @@
     </a>
 
     <!-- BPN Property Intelligence -->
-    <a href="https://map.buildphillynow.org" target="_blank" class="pcard">
+    <a href="https://map.buildphillynow.org" target="_blank" class="pcard" rel="noopener">
       <div class="pcard-top">
         <div class="pcard-logo">
           <img class="pi-logo" src="assets/logo-property-intelligence.png" alt="BPN Property Intelligence">
@@ -388,7 +389,7 @@
       <span class="cta">Read the memo <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
     </a>
     <a class="cv" href="https://phillyhousingproductionfund.netlify.app/" target="_blank" rel="noopener">
-      <div class="cover" style="background:#A5502F">
+      <div class="cover" style="background:#2E7A76">
         <img class="cv-art" src="assets/art/cover-hpf.svg" alt="">
         <div class="top"><img class="cv-logo" src="assets/brand/BPN_Icon_White.svg" alt="BPN"><span class="kick"><span>Research</span><i></i><b>Housing</b></span></div>
         <div class="bot"><span class="rule"></span><h3>Philadelphia Housing Production Fund</h3><span class="date">Aug 2026</span></div>
@@ -397,7 +398,7 @@
       <span class="cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
     </a>
     <a class="cv" href="https://pa-oz-rankings.netlify.app/" target="_blank" rel="noopener">
-      <div class="cover" style="background:#A5502F">
+      <div class="cover" style="background:#6B58A6">
         <img class="cv-art" src="assets/art/cover-paoz.svg" alt="">
         <div class="top"><img class="cv-logo" src="assets/brand/BPN_Icon_White.svg" alt="BPN"><span class="kick"><span>Research</span><i></i><b>Housing</b></span></div>
         <div class="bot"><span class="rule"></span><h3>Pennsylvania Opportunity Zones 2027</h3><span class="date">May 2026</span></div>
@@ -406,7 +407,7 @@
       <span class="cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
     </a>
     <a class="cv" href="https://bpn-oz-analysis.netlify.app/" target="_blank" rel="noopener">
-      <div class="cover" style="background:#A5502F">
+      <div class="cover" style="background:#3E6F98">
         <img class="cv-art" src="assets/art/cover-phloz.svg" alt="">
         <div class="top"><img class="cv-logo" src="assets/brand/BPN_Icon_White.svg" alt="BPN"><span class="kick"><span>Research</span><i></i><b>Housing</b></span></div>
         <div class="bot"><span class="rule"></span><h3>Philadelphia Opportunity Zones, Ranked for the Next Round</h3><span class="date">Apr 2026</span></div>
@@ -632,8 +633,8 @@
 <footer>
   <a href="/" class="footer-logo"><img src="assets/brand/BPN_Icon_White.svg" alt="Build Philly Now"></a>
   <ul class="footer-links">
-    <li><a href="https://buildphillynow.substack.com" target="_blank">BPN News</a></li>
-    <li><a href="https://map.buildphillynow.org" target="_blank">Dashboard</a></li>
+    <li><a href="https://buildphillynow.substack.com" target="_blank" rel="noopener">BPN News</a></li>
+    <li><a href="https://map.buildphillynow.org" target="_blank" rel="noopener">Dashboard</a></li>
     <li><a href="/community-standards/">Community Standards</a></li>
   </ul>
   <span class="footer-copy">© 2026 Build Philly Now</span>
