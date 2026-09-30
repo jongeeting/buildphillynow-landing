@@ -197,9 +197,10 @@
     .tools { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
     .tool.soon { background: transparent; border: 2px dashed var(--cream-dk); justify-content: center; min-height: 140px; }
     .col-head { border-top: 4px solid var(--black); display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-top: 0.6rem; margin-bottom: 0.6rem; }
-    .col-head img { display: block; height: 64px; width: auto; margin-left: -8px; }
-    .col-head img[src$=".svg"] { height: 31px; margin-left: 0; }
-    @media (max-width: 640px) { .col-head img { height: 52px; } .col-head img[src$=".svg"] { height: 25px; } .col-head a { font-size: 0.76rem; } }
+    .col-head img { display: block; height: 92px; width: auto; margin-left: -8px; }
+    .col-head img[src$=".png"] { margin-block: -24px -22px; }
+    .col-head img[src$=".svg"] { height: 44px; margin-left: 0; }
+    @media (max-width: 640px) { .col-head img { height: 64px; } .col-head img[src$=".png"] { margin-block: -17px -15px; } .col-head img[src$=".svg"] { height: 32px; } .col-head a { font-size: 0.76rem; } }
     .col-head a { font-size: 0.82rem; font-weight: 700; color: var(--green-dark); text-decoration: none; white-space: nowrap; }
     .lunch-when { font-size: 0.9rem; line-height: 1.5; margin-bottom: 0.4rem; }
     .lunch-when b { font-weight: 700; }
@@ -563,12 +564,6 @@
 <!-- NEWS + LUNCH -->
 <section class="projects" id="news-lunch">
   <div class="cols2">
-    <div>
-      <div class="col-head"><img src="assets/logo-news.png" alt="BPN News"><a href="https://buildphillynow.substack.com" target="_blank" rel="noopener">Read on Substack &rarr;</a></div>
-      <a class="post" href="https://buildphillynow.substack.com/p/bpn-news-roosevelt-boulevards-safety" target="_blank" rel="noopener"><span class="date">Sep 23, 2026</span><b>Roosevelt Boulevard&rsquo;s Safety Fixes Have a Date. The Subway Still Doesn&rsquo;t</b></a>
-      <a class="post" href="https://buildphillynow.substack.com/p/bpn-policy-brief-housing-capacity" target="_blank" rel="noopener"><span class="date">Sep 15, 2026</span><b>BPN Policy Brief: Housing Capacity in Center City</b></a>
-      <a class="post" href="https://buildphillynow.substack.com/p/two-demolitions-denied-and-a-haring" target="_blank" rel="noopener"><span class="date">Aug 31, 2026</span><b>Two Demolitions Denied, and a Haring Mural on Deck at the Historical Commission</b></a>
-    </div>
     <div id="policy-lunch">
       <div class="col-head"><img src="assets/logo-policy-lunch.svg" alt="BPN Policy Lunch"><a href="https://buildphillynow.substack.com/archive" target="_blank" rel="noopener">All lunches &rarr;</a></div>
       <p class="lunch-when"><b>Fridays, 12&ndash;1:30pm</b> &middot; Econsult Solutions&rsquo; office, 1435 Walnut St.</p>
@@ -584,6 +579,18 @@
       <a class="post" href="https://buildphillynow.substack.com/p/policy-lunch-925-lauren-smith-and" target="_blank" rel="noopener"><span class="date">Sep 25, 2026</span><b>Lauren Smith and Clint Randall, Center City District Housing Report</b></a>
       <a class="post" href="https://buildphillynow.substack.com/p/policy-lunch-911-madeleine-marr-road" target="_blank" rel="noopener"><span class="date">Sep 11, 2026</span><b>Madeleine Marr, ROAD to Housing</b></a>
       <a class="post" href="https://buildphillynow.substack.com/p/policy-lunch-724-vaughn-ross-on-opportunity" target="_blank" rel="noopener"><span class="date">Jul 24, 2026</span><b>Vaughn Ross on Opportunity Zones 2.0</b></a>
+    </div>
+    <div>
+      <div class="col-head"><img src="assets/logo-news.png" alt="BPN News"><a href="https://buildphillynow.substack.com" target="_blank" rel="noopener">Read on Substack &rarr;</a></div>
+      <a class="post" href="https://buildphillynow.substack.com/p/bpn-news-roosevelt-boulevards-safety" target="_blank" rel="noopener"><span class="date">Sep 23, 2026</span><b>Roosevelt Boulevard&rsquo;s Safety Fixes Have a Date. The Subway Still Doesn&rsquo;t</b></a>
+      <a class="post" href="https://buildphillynow.substack.com/p/bpn-policy-brief-housing-capacity" target="_blank" rel="noopener"><span class="date">Sep 15, 2026</span><b>BPN Policy Brief: Housing Capacity in Center City</b></a>
+      <a class="post" href="https://buildphillynow.substack.com/p/two-demolitions-denied-and-a-haring" target="_blank" rel="noopener"><span class="date">Aug 31, 2026</span><b>Two Demolitions Denied, and a Haring Mural on Deck at the Historical Commission</b></a>
+    
+      <a class="post" href="https://buildphillynow.substack.com/p/bpn-news-momentum-for-trolley-modernization" target="_blank" rel="noopener"><span class="date">Jul 27, 2026</span><b>Momentum for Trolley Modernization in Southwest Philly</b></a>
+      <a class="post" href="https://buildphillynow.substack.com/p/bpn-news-this-month-at-phc-swedish" target="_blank" rel="noopener"><span class="date">Jul 16, 2026</span><b>This Month at PHC: Swedish Museum, Veteran Housing in Tacony &amp; 27 Apartments in Spring Garden</b></a>
+      <a class="post" href="https://buildphillynow.substack.com/p/bpn-news-whats-in-the-new-regs-proposed" target="_blank" rel="noopener"><span class="date">Jul 1, 2026</span><b>What&rsquo;s in the New Regs Proposed for Philly&rsquo;s Zoning Board?</b></a>
+      <a class="post" href="https://buildphillynow.substack.com/p/bpn-news-septa-approves-fy27-budget" target="_blank" rel="noopener"><span class="date">Jun 30, 2026</span><b>SEPTA Approves FY27 Budget, Starting Countdown Clock for State Transit Funding</b></a>
+      <a class="post" href="https://buildphillynow.substack.com/p/bpn-news-363-apartments-in-manayunk" target="_blank" rel="noopener"><span class="date">Jun 18, 2026</span><b>363 Apartments in Manayunk Clear Historic Preservation Hurdle</b></a>
     </div>
   </div>
 </section>
