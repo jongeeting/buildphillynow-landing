@@ -167,6 +167,8 @@
     .band .cnt { font-weight: 700; font-size: 0.78rem; white-space: nowrap; }
     .list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 1.5rem; }
     .list.one { grid-template-columns: minmax(0, 1fr); }
+    .callout { background: var(--white); border-radius: 6px; padding: 1.6rem 2rem; margin-top: 1.5rem; display: grid; gap: 1rem; justify-items: center; text-align: center; }
+    .callout p { font-size: 1rem; line-height: 1.6; max-width: 62ch; margin: 0; }
     .more-btn { display: none; margin-top: 1.5rem; font: inherit; font-size: 0.9rem; font-weight: 700; color: var(--green-dark); background: transparent; border: 2px solid var(--green-dark); border-radius: 4px; padding: 0.7rem 1.2rem; cursor: pointer; }
     .more-btn:hover { background: var(--green-dark); color: #fff; }
     .js .more-btn { display: inline-block; }
@@ -403,6 +405,10 @@
       </div>
     </a>
 
+  </div>
+  <div class="callout">
+    <p>Professional Citizen subscriptions start at $15/month and support independent Substack coverage of city hearings, zoning decisions, and permit activity that shape how Philadelphia grows.</p>
+    <a class="btn" href="https://buildphillynow.substack.com/subscribe" target="_blank" rel="noopener">Subscribe today &rarr;</a>
   </div>
 </section>
 
