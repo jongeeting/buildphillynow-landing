@@ -169,6 +169,16 @@
     .rcard-desc { font-size: 0.85rem; line-height: 1.6; color: var(--gray); flex: 1; }
     .rcard-cta { font-size: 0.78rem; font-weight: 700; color: var(--green); display: flex; align-items: center; gap: 0.3rem; }
     .rcard-cta svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+    .rgrid-one { grid-template-columns: 1fr; margin-bottom: 2.5rem; }
+    .rcard-wide { flex-direction: row; align-items: center; flex-wrap: wrap; gap: 1rem 2rem; background: var(--green-pale); border-color: rgba(0,132,77,0.25); }
+    .rcard-wide .rcard-desc { flex: 1 1 320px; }
+    .rcard-wide .rcard-title { font-size: 1rem; }
+    .rgroup { margin-bottom: 2.5rem; }
+    .rgroup-title {
+      font-family: 'Unbounded', sans-serif; font-size: 1.05rem; font-weight: 800;
+      letter-spacing: -0.01em; color: var(--black); margin-bottom: 1rem;
+      padding-bottom: 0.6rem; border-bottom: 2px solid var(--green);
+    }
     .rcard.soon { background: transparent; border-style: dashed; }
     .rcard.soon .rtag { color: var(--gray); background: var(--cream); }
     .rcard.soon .rcard-cta { color: var(--gray-lt); }
@@ -347,81 +357,126 @@
   <hr class="section-rule" style="margin: 0 0 2.5rem;">
   <div class="projects-header">
     <span class="projects-title">Research &amp; Analysis</span>
-    <span class="projects-sub">Original data work on housing, transit, and the rules that shape building in Philadelphia.</span>
+    <span class="projects-sub">Original data work on housing, transit, energy, and the rules that shape building in Philadelphia.</span>
   </div>
-  <div class="rgrid">
+  <div class="rgrid rgrid-one">
+      <a href="https://bpnguide.netlify.app/" target="_blank" class="rcard rcard-wide">
+        <div class="rcard-tags"><span class="rtag">Standing resource</span><span class="rtag">Zoning</span></div>
+        <div class="rcard-title">Philadelphia Development: A Field Guide</div>
+        <p class="rcard-desc">Plain-language references for Philadelphia zoning, housing, and development &mdash; including &ldquo;Who Decides What,&rdquo; a guide to 15 boards, commissions, and departments with their full current rosters.</p>
+        <span class="rcard-cta">Open the guide <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </a>
+  </div>
+  <div class="rgroup">
+    <h3 class="rgroup-title">Housing</h3>
+    <div class="rgrid">
       <a href="https://philly-toc.netlify.app/" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag">Housing</span><span class="rtag">Zoning</span></div>
+        <div class="rcard-tags"><span class="rtag">Zoning</span></div>
         <div class="rcard-title">30,000 Homes: Strengthening Philadelphia&rsquo;s TOC Bills</div>
         <p class="rcard-desc">Mayor Parker introduced five transit-oriented zoning bills. Here&rsquo;s what they do, and how City Council can build on them.</p>
         <span class="rcard-cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
       </a>
       <a href="https://buildphillynow.substack.com" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag">Housing</span><span class="rtag">Zoning</span><span class="rtag partner">Center City District</span></div>
+        <div class="rcard-tags"><span class="rtag">Zoning</span><span class="rtag partner">Center City District</span></div>
         <div class="rcard-title">Housing Capacity in Center City</div>
         <p class="rcard-desc">About 66 million square feet of unused zoned capacity in core Center City&rsquo;s high-rise districts &mdash; but nearly half of it is locked up in historic districts.</p>
         <span class="rcard-cta">Read the memo <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
       </a>
       <a href="https://phillyhousingproductionfund.netlify.app/" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag">Housing</span><span class="rtag">Finance</span></div>
+        <div class="rcard-tags"><span class="rtag">Finance</span></div>
         <div class="rcard-title">Philadelphia Housing Production Fund</div>
         <p class="rcard-desc">A revolving construction loan fund to unlock 2,930 permitted, shovel-ready homes stalled in 39 projects &mdash; without new federal dollars.</p>
         <span class="rcard-cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
       </a>
+      <a href="https://turnthekey.netlify.app/" target="_blank" class="rcard">
+        <div class="rcard-tags"><span class="rtag">Land Bank</span></div>
+        <div class="rcard-title">Who Turn the Key Actually Houses</div>
+        <p class="rcard-desc">What the Land Bank&rsquo;s Turn the Key program is delivering: 1,048 brand-new homes for working-class Philadelphians, $1,400 mortgages, and a 66% AMI average buyer.</p>
+        <span class="rcard-cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </a>
+      <a href="https://min-analysis.netlify.app/" target="_blank" class="rcard">
+        <div class="rcard-tags"><span class="rtag">Zoning</span></div>
+        <div class="rcard-title">The MIN Overlay: A Parcel-Level Impact Analysis</div>
+        <p class="rcard-desc">The Mixed-Income Neighborhoods overlay has produced 19 affordable units in four years while deterring an estimated 1,000&ndash;1,400 housing units.</p>
+        <span class="rcard-cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </a>
       <a href="https://bpn-oz-analysis.netlify.app/" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag">Housing</span><span class="rtag">Opportunity Zones</span></div>
+        <div class="rcard-tags"><span class="rtag">Opportunity Zones</span></div>
         <div class="rcard-title">Philadelphia Opportunity Zones, Ranked for the Next Round</div>
         <p class="rcard-desc">Ranking Philadelphia&rsquo;s Opportunity Zone&ndash;eligible census tracts by transit access, regional jobs access, and recent permit and business activity.</p>
         <span class="rcard-cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
       </a>
       <a href="https://pa-oz-rankings.netlify.app/" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag">Housing</span><span class="rtag">Opportunity Zones</span></div>
+        <div class="rcard-tags"><span class="rtag">Opportunity Zones</span></div>
         <div class="rcard-title">Pennsylvania Opportunity Zones 2027</div>
         <p class="rcard-desc">Where should Pennsylvania put its next Opportunity Zones? A statewide ranking ahead of the 2027 designations.</p>
         <span class="rcard-cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
       </a>
-      <a href="https://phillystudentfares.netlify.app/" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag">Transit</span><span class="rtag partner">Transit Forward Philly</span></div>
-        <div class="rcard-title">Student Fares That Work</div>
-        <p class="rcard-desc">Student passes stop working at 8 PM, on weekends, and all summer &mdash; and 31,600 students can&rsquo;t get one at all. A restructured SEPTA&ndash;School District deal can fix that.</p>
-        <span class="rcard-cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      <a href="https://pa-housing-votes.netlify.app/" target="_blank" class="rcard">
+        <div class="rcard-tags"><span class="rtag">State policy</span><span class="rtag">Tracker</span></div>
+        <div class="rcard-title">PA Housing Votes: Zoning Reform Tracker</div>
+        <p class="rcard-desc">Where every PA House and Senate member stands on housing affordability legislation &mdash; a vote tracker and cosponsor map for current and historical bills.</p>
+        <span class="rcard-cta">Open the tracker <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
       </a>
       <a href="https://norrissquarettk.netlify.app/" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag">Land Bank</span><span class="rtag">Housing</span></div>
+        <div class="rcard-tags"><span class="rtag">Land Bank</span></div>
         <div class="rcard-title">Two Years, 30 Homes: The Civetta / Norris Square Timeline</div>
         <p class="rcard-desc">How a two-year bid to build 30 Turn the Key homes cleared the Land Bank board &mdash; and landed in bureaucratic purgatory.</p>
         <span class="rcard-cta">Read the timeline <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
       </a>
       <a href="https://oldcitypermits.netlify.app/" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag">Permitting</span><span class="rtag">Zoning</span></div>
-        <div class="rcard-title">Old City: CTR Overlay Permitting Study</div>
+        <div class="rcard-tags"><span class="rtag">Permitting</span></div>
+        <div class="rcard-title">Old City Permitting Analysis</div>
         <p class="rcard-desc">19 years of city data: 53% of zoning appeals tied to a CTR overlay trigger, a ~58-day median wait for a hearing &mdash; and a 98% approval rate for restaurants.</p>
         <span class="rcard-cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
       </a>
       <a href="https://ncaoverlaystudy.netlify.app/" target="_blank" class="rcard">
-        <div class="rcard-tags"><span class="rtag">Permitting</span><span class="rtag">Zoning</span></div>
+        <div class="rcard-tags"><span class="rtag">Permitting</span></div>
         <div class="rcard-title">North Delaware Commercial Overlay Study</div>
         <p class="rcard-desc">The overlay makes restaurants seek a special exception even where base zoning allows them &mdash; and 97% are approved anyway.</p>
         <span class="rcard-cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
       </a>
       <div class="rcard soon">
-        <div class="rcard-tags"><span class="rtag">Housing</span><span class="rtag">Parcel Analysis</span><span class="rtag partner">With AIA &amp; BIA</span></div>
+        <div class="rcard-tags"><span class="rtag">Parcel analysis</span><span class="rtag partner">With AIA &amp; BIA</span></div>
         <div class="rcard-title">Point Access Blocks: Parcel Analysis</div>
         <p class="rcard-desc">Which Philadelphia parcels could support point access block housing? A joint analysis with the AIA and BIA.</p>
         <span class="rcard-cta">Launching soon</span>
       </div>
       <div class="rcard soon">
-        <div class="rcard-tags"><span class="rtag">Zoning</span><span class="rtag">Tracker</span></div>
+        <div class="rcard-tags"><span class="rtag">Tracker</span></div>
         <div class="rcard-title">ZBA Watch</div>
         <p class="rcard-desc">Tracking Zoning Board of Adjustment cases across Philadelphia.</p>
         <span class="rcard-cta">Launching soon</span>
       </div>
       <div class="rcard soon">
-        <div class="rcard-tags"><span class="rtag">Land Bank</span><span class="rtag">Tracker</span></div>
+        <div class="rcard-tags"><span class="rtag">Tracker</span><span class="rtag">Land Bank</span></div>
         <div class="rcard-title">Land Bank Watch</div>
         <p class="rcard-desc">Following Land Bank board decisions, dispositions, and pipeline.</p>
         <span class="rcard-cta">Launching soon</span>
       </div>
+    </div>
+  </div>
+  <div class="rgroup">
+    <h3 class="rgroup-title">Transit</h3>
+    <div class="rgrid">
+      <a href="https://phillystudentfares.netlify.app/" target="_blank" class="rcard">
+        <div class="rcard-tags"><span class="rtag partner">Transit Forward Philly</span></div>
+        <div class="rcard-title">Student Fares That Work</div>
+        <p class="rcard-desc">Student passes stop working at 8 PM, on weekends, and all summer &mdash; and 31,600 students can&rsquo;t get one at all. A restructured SEPTA&ndash;School District deal can fix that.</p>
+        <span class="rcard-cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </a>
+    </div>
+  </div>
+  <div class="rgroup">
+    <h3 class="rgroup-title">Energy</h3>
+    <div class="rgrid">
+      <a href="https://bpn-interconnection.netlify.app/" target="_blank" class="rcard">
+        <div class="rcard-tags"><span class="rtag">Generation</span><span class="rtag">Permitting</span></div>
+        <div class="rcard-title">Federal Tax Cliff Threatens Pennsylvania&rsquo;s Energy Generation Pipeline</div>
+        <p class="rcard-desc">91 PA generation projects totaling 1,758 MW have signed PJM interconnection agreements and are ready to build &mdash; but are stuck on state and local permitting as federal tax credits expire.</p>
+        <span class="rcard-cta">Read the analysis <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </a>
+    </div>
   </div>
 </section>
 
