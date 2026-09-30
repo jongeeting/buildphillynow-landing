@@ -240,11 +240,6 @@
     .produces-list li { font-size: 0.92rem; line-height: 1.6; color: var(--black); padding-left: 1.2rem; position: relative; }
     .produces-list li::before { content: ''; position: absolute; left: 0; top: 0.7em; width: 0.45rem; height: 1.5px; background: var(--green); }
 
-    /* ── COALITION ─────────────────────────────────── */
-    .coalition { background: var(--black); padding: 3rem 2.5rem; display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; }
-    .coa-label { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.58rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.55); white-space: nowrap; flex-shrink: 0; }
-    .coa-members { display: flex; gap: 1.75rem; flex-wrap: wrap; }
-    .coa-member { font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.75); letter-spacing: 0.03em; }
 
     /* ── FOOTER ────────────────────────────────────── */
     footer { background: var(--black); padding: 2.5rem 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; border-top: 1px solid rgba(255,255,255,0.07); }
@@ -268,8 +263,7 @@
       .about { padding: 4rem 1.25rem; }
       .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .about-left { position: static; }
-      .coalition { padding: 2.5rem 1.25rem; gap: 1.5rem; }
-      footer { padding: 2rem 1.25rem; }
+        footer { padding: 2rem 1.25rem; }
       .section-rule { margin: 0 1.25rem; }
     }
     @media (max-width: 600px) { .list, .tools { grid-template-columns: minmax(0, 1fr); } }
@@ -601,20 +595,6 @@
     </div>
   </div>
 </section>
-
-<!-- COALITION -->
-<div class="coalition">
-  <span class="coa-label">Our coalition</span>
-  <div class="coa-members">
-    <span class="coa-member">IBEW Local 98</span>
-    <span class="coa-member">EAS Regional Council of Carpenters</span>
-    <span class="coa-member">30,000 Homes Table</span>
-    <span class="coa-member">Building Trades</span>
-    <span class="coa-member">Urban League</span>
-    <span class="coa-member">Habitat for Humanity</span>
-    <span class="coa-member">SEPTA</span>
-  </div>
-</div>
 
 <!-- FOOTER -->
 <footer>
